@@ -69,7 +69,7 @@ style = "Regular"
 
 [terminal]
 shell.program = "/opt/homebrew/bin/fish"
-shell.args = ["-C", "cd ~/Projects"]
+shell.args = ["-C", "cd ~/Work"]
 
 [window]
 startup_mode = "Maximized"
