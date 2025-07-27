@@ -1,0 +1,4 @@
+# fish
+fish/.config/fish/fish_variables*
+fish/.config/fish/fisher/
+fish/.config/fish/secrets.fish
