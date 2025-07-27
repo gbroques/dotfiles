@@ -4,9 +4,9 @@ gbroques' personal dotfiles managed with [GNU Stow](https://www.gnu.org/software
 
 ## Installation
 
-1. Clone repository:
+1. Clone repository to home directory:
 
-       git clone git@github.com:gbroques/dotfiles.git
+       cd ~ && git clone git@github.com:gbroques/dotfiles.git
 
 2. Setup git hooks by running the following command from the root of the repository:
 
