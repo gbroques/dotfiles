@@ -53,6 +53,7 @@ To setup:
 3. Install the [autopair plugin](https://github.com/jorgebucaran/autopair.fish) for automatically inserting, erasing, and skipping matching pairs (e.g. "").
 4. Ensure [`fzf`](#fzf) is installed for CTRL-T, CTRL-R, and ALT-C [key bindings](https://junegunn.github.io/fzf/shell-integration/#key-bindings).
 5. Ensure [`zoxide`](#zoxide) is installed for more intelligent directory changing.
+6. A `secrets.fish` may be created in [./fish/.config/fish/](./fish/.config/fish/) for any sensitive or proprietary configuration in a private work environment.
 
 ## alacritty
 
