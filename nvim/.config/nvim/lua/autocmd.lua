@@ -28,21 +28,21 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 -- Automatically enter INSERT mode upon opening a terminal.
 -- https://vi.stackexchange.com/questions/3670/how-to-enter-insert-mode-when-entering-neovim-terminal-pane
 -- https://github.com/nvim-neotest/neotest/issues/2#issuecomment-1149532666
-vim.api.nvim_create_autocmd({ 'TermOpen' }, {
+vim.api.nvim_create_autocmd('TermOpen', {
   callback = function()
-    if vim.startswith(vim.api.nvim_buf_get_name(0), "term://") then
-      vim.cmd("startinsert")
+    if vim.startswith(vim.api.nvim_buf_get_name(0), 'term://') then
+      vim.cmd('startinsert')
     end
   end
 })
 -- Automatically close terminal buffer when process exits successfully (Ctrl + d),
 -- or when using the exit command in fish.
 -- https://fishshell.com/docs/current/cmds/exit.html
-vim.api.nvim_create_autocmd("TermClose", {
+vim.api.nvim_create_autocmd('TermClose', {
   callback = function()
     local status = vim.v.event.status
     if status == 0 or status == 255 then
-      vim.cmd("bdelete! " .. vim.fn.expand("<abuf>"))
+      vim.cmd('bdelete! ' .. vim.fn.expand('<abuf>'))
     end
   end
 })
