@@ -59,7 +59,7 @@ end
 if command --query fzf
     # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
     # use bg_dark and fg colors from colorscheme.lua
-    set -Ux FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
+    set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
     --highlight-line \
     --info=inline-right \
     --ansi \
@@ -97,10 +97,10 @@ end
 
 set -l os (uname)
 if test "$os" = Darwin
-    set -U fish_user_paths ~/.local/share/nvim/mason/packages/jdtls/bin $fish_user_paths
-    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-    set -U fish_user_paths /usr/local/bin $fish_user_paths
-    set -Ux JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
+    fish_add_path ~/.local/share/nvim/mason/packages/jdtls/bin
+    fish_add_path /opt/homebrew/bin
+    fish_add_path /usr/local/bin
+    set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
 end
 
 if string match -q "*CYGWIN*" (uname -a)
