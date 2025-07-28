@@ -68,10 +68,47 @@ return {
     -- Upgrade past v4.0.0 as it doesn't include the following fix for dapui toggle:
     -- https://github.com/rcarriga/nvim-dap-ui/commit/13888eb35faaba48efaf49130b83e0d12e042e1b
     commit = 'cf91d5e2d07c72903d052f5207511bf7ecdb7122',
-    config = function ()
+    config = function()
       local dapui = require('dapui')
-      dapui.setup()
-      vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
+
+      -- see :h dapui.setup()
+      local layouts = {
+        {
+          position = "left",
+          size = 40,
+          elements = {
+            {
+              id = "scopes",
+              size = 0.25
+            },
+            {
+              id = "breakpoints",
+              size = 0.25
+            },
+            {
+              id = "stacks",
+              size = 0.25
+            },
+            {
+              id = "watches",
+              size = 0.25
+            }
+          }
+        },
+        {
+          position = "bottom",
+          size = 0.5,
+          elements = {
+            {
+              id = "console",
+              size = 1
+            }
+          }
+        }
+      }
+      dapui.setup({ layouts = layouts })
+      vim.keymap.set('n', '<leader>du', function() dapui.toggle({ layout = 1 }) end, { desc = 'Toggle Full UI' })
+      vim.keymap.set('n', '<leader>dl', function() dapui.toggle({ layout = 2 }) end, { desc = 'Toggle Console' })
     end,
     dependencies = {
       'mfussenegger/nvim-dap',
