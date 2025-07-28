@@ -60,7 +60,8 @@ for file in $fisher_path/conf.d/*.fish
     source $file
 end
 
-# Zoxide
+# zoxide
+# ------
 if command --query zoxide
     zoxide init fish | source
 else
@@ -68,6 +69,7 @@ else
 end
 
 # fzf
+# ---
 if command --query fzf
     # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
     # use bg_dark and fg colors from colorscheme.lua
