@@ -1,4 +1,3 @@
-
 # Abbreviations
 # -------------------------------------------------------------------
 # TODO: Consider installing https://github.com/Gazorby/fish-abbreviation-tips
@@ -51,32 +50,63 @@ set fisher_path $__fish_config_dir/fisher
 
 # Zoxide
 if command --query zoxide
-  zoxide init fish | source
+    zoxide init fish | source
 else
-  echo "Install zoxide: https://github.com/ajeetdsouza/zoxide"
+    echo "Install zoxide: https://github.com/ajeetdsouza/zoxide"
+end
+
+# fzf
+if command --query fzf
+    # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
+    # use bg_dark and fg colors from colorscheme.lua
+    set -Ux FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
+    --highlight-line \
+    --info=inline-right \
+    --ansi \
+    --layout=reverse \
+    --border=none \
+    --color=bg+:#2d3f76 \
+    --color=bg:#181a26 \
+    --color=border:#589ed7 \
+    --color=fg:#d3dcf7 \
+    --color=gutter:#181a26 \
+    --color=header:#ff966c \
+    --color=hl+:#65bcff \
+    --color=hl:#65bcff \
+    --color=info:#545c7e \
+    --color=marker:#ff007c \
+    --color=pointer:#ff007c \
+    --color=prompt:#65bcff \
+    --color=query:#d3dcf7:regular \
+    --color=scrollbar:#589ed7 \
+    --color=separator:#ff966c \
+    --color=spinner:#ff007c \
+    "
+else
+    echo 'Install fzf: https://github.com/junegunn/fzf'
 end
 
 if test -x /home/g/.local/bin/micromamba
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-set -gx MAMBA_EXE "/home/g/.local/bin/micromamba"
-set -gx MAMBA_ROOT_PREFIX "/home/g/micromamba"
-$MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
-# <<< mamba initialize <<<
+    # >>> mamba initialize >>>
+    # !! Contents within this block are managed by 'mamba init' !!
+    set -gx MAMBA_EXE "/home/g/.local/bin/micromamba"
+    set -gx MAMBA_ROOT_PREFIX /home/g/micromamba
+    $MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
+    # <<< mamba initialize <<<
 end
 
 set -l os (uname)
 if test "$os" = Darwin
-  set -U fish_user_paths ~/.local/share/nvim/mason/packages/jdtls/bin $fish_user_paths
-  set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
-  set -U fish_user_paths /usr/local/bin $fish_user_paths
-  set -Ux JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
+    set -U fish_user_paths ~/.local/share/nvim/mason/packages/jdtls/bin $fish_user_paths
+    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+    set -U fish_user_paths /usr/local/bin $fish_user_paths
+    set -Ux JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
 end
 
 if string match -q "*CYGWIN*" (uname -a)
-  cd (cygpath $USERPROFILE)/Projects
+    cd (cygpath $USERPROFILE)/Projects
 end
 
 if test -e ~/.config/fish/secrets.fish
-  source ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
 end
