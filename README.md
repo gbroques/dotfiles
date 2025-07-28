@@ -16,25 +16,25 @@ gbroques' personal dotfiles managed with [GNU Stow](https://www.gnu.org/software
 
 [zoxide](https://github.com/ajeetdsouza/zoxide) is a more intelligent `cd` command.
 
-See [Installation](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation).
+To install, see [Installation](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation).
 
 ## fzf
 
 [fzf](https://junegunn.github.io/fzf/) is a command-line fuzzy finder.
 
-See [Installation](https://junegunn.github.io/fzf/installation/).
+To install, see [Installation](https://junegunn.github.io/fzf/installation/).
 
 ## ripgrep
 
 [ripgrep](https://github.com/BurntSushi/ripgrep) (`rg`) is a faster-alternative to `grep` for searching through files.
 
-See [Installation](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation).
+To install, see [Installation](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation).
 
 ## fd
 
 [fd](https://github.com/sharkdp/fd) is a fast and user-friendly alternative to `find` for finding files.
 
-See [Installation](https://github.com/sharkdp/fd?tab=readme-ov-file#installation).
+To install, see [Installation](https://github.com/sharkdp/fd?tab=readme-ov-file#installation).
 
 ## fish
 
