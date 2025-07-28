@@ -86,17 +86,6 @@ Install the [YAML language server](https://github.com/redhat-developer/yaml-lang
 
     npm install -g yaml-language-server
 
-## Setup
-
-Clone to Neovim configuration directory depending on operating system:
-
-| Operating System | Clone Command |
-| ---------------- | ------------- |
-| Linux / MacOS    | `git clone git@github.com:gbroques/neovim-configuration.git ~/.config/nvim`       |
-| Windows          | `git clone git@github.com:gbroques/neovim-configuration.git ~/AppData/Local/nvim` |
-
-`:help config`
-
 ## Operators
 
 * `c`hange (*built-in*)
