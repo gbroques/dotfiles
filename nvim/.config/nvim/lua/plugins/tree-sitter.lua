@@ -56,7 +56,6 @@ return {
               ['if'] = { query = '@function.inner', desc = 'inner function' },
               ['al'] = { query = '@loop.outer', desc = 'a loop' },
               ['il'] = { query = '@loop.inner', desc = 'inner loop' },
-              -- Supported for lua and JavaScript, but not Java.
               ['ar'] = { query = '@return.outer', desc = 'a return statement' },
               ['ir'] = { query = '@return.inner', desc = 'inner return statement' },
             },
