@@ -12,11 +12,20 @@ gbroques' personal dotfiles managed with [GNU Stow](https://www.gnu.org/software
 
        git config core.hooksPath ./.git-hooks
 
+## fd
+
+[fd](https://github.com/sharkdp/fd) is a fast and user-friendly alternative to `find` for finding files.
+
+To install, see [Installation](https://github.com/sharkdp/fd?tab=readme-ov-file#installation).
+
 ## fzf
 
 [fzf](https://junegunn.github.io/fzf/) is a command-line fuzzy finder.
 
-To install, see [Installation](https://junegunn.github.io/fzf/installation/).
+To setup:
+
+1. [Install fzf](https://junegunn.github.io/fzf/installation/).
+2. Ensure [`fd`](#fd) is installed as `fzf` will use that to find files and directories.
 
 ## zoxide
 
@@ -32,12 +41,6 @@ To setup:
 [ripgrep](https://github.com/BurntSushi/ripgrep) (`rg`) is a faster-alternative to `grep` for searching through files.
 
 To install, see [Installation](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation).
-
-## fd
-
-[fd](https://github.com/sharkdp/fd) is a fast and user-friendly alternative to `find` for finding files.
-
-To install, see [Installation](https://github.com/sharkdp/fd?tab=readme-ov-file#installation).
 
 ## delta
 

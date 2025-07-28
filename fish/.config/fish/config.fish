@@ -96,6 +96,12 @@ if command --query fzf
     --color=separator:#ff966c \
     --color=spinner:#ff007c \
     "
+    # Setting fd as the default source for fzf
+    set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+
+    # To apply the command to CTRL-T as well
+    # https://github.com/junegunn/fzf/issues/4251#issuecomment-2662966067
+    set -gx FZF_CTRL_T_COMMAND "command fd -L --type f  --hidden --follow --exclude .git . \$dir"
 else
     echo 'Install fzf: https://github.com/junegunn/fzf'
 end
