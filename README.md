@@ -80,7 +80,7 @@ To setup:
 
 ## git
 
-git is a distributed version control system.
+[git](https://git-scm.com/) is a distributed version control system.
 
 To setup:
 
