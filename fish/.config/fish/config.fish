@@ -49,9 +49,6 @@ abbr -a -- fcdh 'cd (fd --type d --hidden | fzf)' # fuzzy cd hidden
 # Fisher
 set fisher_path $__fish_config_dir/fisher
 
-# Path
-fish_add_path ~/.local/share/nvim/language-servers/lua-language-server/bin
-
 # Zoxide
 if command --query zoxide
   zoxide init fish | source
