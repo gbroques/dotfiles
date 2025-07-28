@@ -99,6 +99,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     set_lsp_keymap('n', '<leader>lf', function()
       vim.lsp.buf.format { async = true }
     end, { desc = 'Format' })
+    -- TODO: Consider inc-rename plugin.
+    -- https://github.com/smjonas/inc-rename.nvim
+    -- https://github.com/filipdutescu/renamer.nvim (appears unmaintained)
     set_lsp_keymap('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename' });
   end,
 })
