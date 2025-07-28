@@ -76,7 +76,7 @@ Two enviroment variables, `ESLINT_NODE_PATH` and `ESLINT_CONFIG_FILE`, specifyin
 
 ### Tree-sitter
 
-Install the Tree-sitter query parser for [query editor highlighting](https://github.com/nvim-treesitter/playground):
+Install the Tree-sitter query parser for syntax-highlighting via `:InspectTree`, `:EditQuery`, and `*.scm` files:
 
     :TSInstall query
 
