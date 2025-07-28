@@ -73,6 +73,7 @@ shell.args = ["-C", "cd ~/Work"]
 
 [window]
 startup_mode = "Maximized"
+option_as_alt = "OnlyLeft"
 
 [window.padding]
 x = 16
