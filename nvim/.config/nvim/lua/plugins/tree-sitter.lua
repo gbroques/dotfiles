@@ -7,7 +7,8 @@ return {
     dependencies = {
       {
         'windwp/nvim-ts-autotag',
-        commit = 'a1d526af391f6aebb25a8795cbc05351ed3620b5'
+        commit = 'a1d526af391f6aebb25a8795cbc05351ed3620b5',
+        config = true
       },
       {
         'HiPhish/rainbow-delimiters.nvim',
@@ -31,7 +32,6 @@ return {
         incremental_selection = { enable = true },
         indent = { enable = true },
         autopairs = { enable = true },
-        autotag = { enable = true },
         rainbow = { enable = true },
         textobjects = {
           select = {
