@@ -94,3 +94,19 @@ To setup:
          email = <work email>
 
    Projects should be in a `~/Work` directory to apply this [conditional configuration](https://git-scm.com/docs/git-config#_conditional_includes).
+
+## bat
+
+[bat](https://github.com/sharkdp/bat) is a `cat` clone with syntax-highlighting and `git` integration.
+
+To setup:
+
+1. [Install bat](https://github.com/sharkdp/bat?tab=readme-ov-file#installation).
+2. Install the stow package from the root of this repository:
+
+       stow bat
+
+3. Update bat's binary cache with the tokyonight_moon theme:
+
+       bat cache --build
+

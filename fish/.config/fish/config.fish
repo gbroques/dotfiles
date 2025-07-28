@@ -100,6 +100,10 @@ else
     echo 'Install fzf: https://github.com/junegunn/fzf'
 end
 
+# bat
+# ---
+set -gx BAT_THEME tokyonight_moon
+
 if test -x /home/g/.local/bin/micromamba
     # >>> mamba initialize >>>
     # !! Contents within this block are managed by 'mamba init' !!
