@@ -1,24 +1,24 @@
 [alias]
-	co = checkout
-	br = branch
-	cm = commit
-	st = status
-	graph = log --graph --oneline --decorate
-	fixlast = commit -a --amend -C HEAD
-	fl = fixlast
-	gr = graph
-	rp = rev-parse
-	fork-point = merge-base --fork-point
-	fp = fork-point
-	lg = log --oneline
+  co = checkout
+  br = branch
+  cm = commit
+  st = status
+  graph = log --graph --oneline --decorate
+  fixlast = commit -a --amend -C HEAD
+  fl = fixlast
+  gr = graph
+  rp = rev-parse
+  fork-point = merge-base --fork-point
+  fp = fork-point
+  lg = log --oneline
 [core]
-	pager = delta
-	editor = nvim
+  pager = delta
+  editor = nvim
 [interactive]
-	diffFilter = delta --color-only
+  diffFilter = delta --color-only
 [delta]
-	navigate = true    # use n and N to move between diff sections
-	line-numbers = true
+  navigate = true    # use n and N to move between diff sections
+  line-numbers = true
   # https://github.com/folke/tokyonight.nvim/blob/main/extras/delta/tokyonight_moon.gitconfig
   minus-style                   = syntax "#3a273a"
   minus-non-emph-style          = syntax "#3a273a"
@@ -32,12 +32,12 @@
   line-numbers-plus-style       = "#b8db87"
   line-numbers-zero-style       = "#3b4261"
 [merge]
-	conflictstyle = zdiff3
+  conflictstyle = zdiff3
 [diff]
-	colorMoved = default
+  colorMoved = default
 [user]
-	name = G Roques
-	email = groques360@gmail.com
+  name = G Roques
+  email = groques360@gmail.com
 [includeIf "gitdir:~/Work/**"]
-	path = ~/.gitconfig-work
+  path = ~/.gitconfig-work
 
