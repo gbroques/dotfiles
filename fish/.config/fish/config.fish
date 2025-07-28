@@ -70,41 +70,37 @@ end
 
 # fzf
 # ---
-if command --query fzf
-    # https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
-    # use bg_dark and fg colors from colorscheme.lua
-    set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
-    --highlight-line \
-    --info=inline-right \
-    --ansi \
-    --layout=reverse \
-    --border=none \
-    --color=bg+:#2d3f76 \
-    --color=bg:#181a26 \
-    --color=border:#589ed7 \
-    --color=fg:#d3dcf7 \
-    --color=gutter:#181a26 \
-    --color=header:#ff966c \
-    --color=hl+:#65bcff \
-    --color=hl:#65bcff \
-    --color=info:#545c7e \
-    --color=marker:#ff007c \
-    --color=pointer:#ff007c \
-    --color=prompt:#65bcff \
-    --color=query:#d3dcf7:regular \
-    --color=scrollbar:#589ed7 \
-    --color=separator:#ff966c \
-    --color=spinner:#ff007c \
-    "
-    # Setting fd as the default source for fzf
-    set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+# https://github.com/folke/tokyonight.nvim/blob/main/extras/fzf/tokyonight_moon.sh
+# use bg_dark and fg colors from colorscheme.lua
+set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS \
+--highlight-line \
+--info=inline-right \
+--ansi \
+--layout=reverse \
+--border=none \
+--color=bg+:#2d3f76 \
+--color=bg:#181a26 \
+--color=border:#589ed7 \
+--color=fg:#d3dcf7 \
+--color=gutter:#181a26 \
+--color=header:#ff966c \
+--color=hl+:#65bcff \
+--color=hl:#65bcff \
+--color=info:#545c7e \
+--color=marker:#ff007c \
+--color=pointer:#ff007c \
+--color=prompt:#65bcff \
+--color=query:#d3dcf7:regular \
+--color=scrollbar:#589ed7 \
+--color=separator:#ff966c \
+--color=spinner:#ff007c \
+"
+# Setting fd as the default source for fzf
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 
-    # To apply the command to CTRL-T as well
-    # https://github.com/junegunn/fzf/issues/4251#issuecomment-2662966067
-    set -gx FZF_CTRL_T_COMMAND "command fd -L --type f  --hidden --follow --exclude .git . \$dir"
-else
-    echo 'Install fzf: https://github.com/junegunn/fzf'
-end
+# To apply the command to CTRL-T as well
+# https://github.com/junegunn/fzf/issues/4251#issuecomment-2662966067
+set -gx FZF_CTRL_T_COMMAND "command fd -L --type f  --hidden --follow --exclude .git . \$dir"
 
 # bat
 # ---
