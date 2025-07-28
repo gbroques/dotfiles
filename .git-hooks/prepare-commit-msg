@@ -1,3 +1,4 @@
+#!/bin/sh
 # Automatically preface commit messages with the modified GNU stow packages.
 #
 # See:
@@ -14,5 +15,9 @@ COMMIT_MSG_FILE=$1
 # 5. Join them with a space
 packages=$(git diff --name-only --cached | sed -E 's/\/.+//' | uniq | sort | paste -sd ' ' -)
 
-# TODO: Check if commit message already contains prefix when amending a commit.
-echo "($packages): $(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
+# -z checks if the string length is zero.
+if [ -z "$packages" ]; then
+  echo "$(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
+else
+  echo "($packages): $(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
+fi
