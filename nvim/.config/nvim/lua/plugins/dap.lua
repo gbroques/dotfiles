@@ -6,20 +6,8 @@ return {
     tag = '0.10.0',
     cmd = { 'DapUIToggle', 'DapToggleRepl', 'DapToggleBreakpoint' },
     ft = { 'java ' }, -- for mfussenegger/nvim-jdtls
-    dependencies = {
-      {
-        'rcarriga/nvim-dap-ui',
-        tag = 'v4.0.0',
-        config = true
-      },
-      {
-        'nvim-neotest/nvim-nio',
-        tag = 'v1.10.1'
-      }
-    },
     config = function()
       local dap = require('dap')
-      local dapui = require('dapui')
       local icons = require('icons')
 
       -- Customize breakpoint
@@ -73,7 +61,24 @@ return {
         dap.repl.toggle({ height = 15 })
       end, { desc = 'Toggle DAP repl' })
       vim.keymap.set('n', '<leader>ds', dap.terminate, { desc = 'Stop' })
-      vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
     end
+  },
+  {
+    'rcarriga/nvim-dap-ui',
+    -- Upgrade past v4.0.0 as it doesn't include the following fix for dapui toggle:
+    -- https://github.com/rcarriga/nvim-dap-ui/commit/13888eb35faaba48efaf49130b83e0d12e042e1b
+    commit = 'cf91d5e2d07c72903d052f5207511bf7ecdb7122',
+    config = function ()
+      local dapui = require('dapui')
+      dapui.setup()
+      vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Toggle UI' })
+    end,
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      {
+        'nvim-neotest/nvim-nio',
+        tag = 'v1.10.1'
+      }
+    }
   },
 }
