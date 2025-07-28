@@ -26,9 +26,6 @@ return {
       --       See https://youtu.be/uL9oOZStezw?t=291
     },
     config = function()
-      local function ends_with(str, ending)
-        return ending == '' or str:sub(- #ending) == ending
-      end
       require('nvim-treesitter.configs').setup({
         highlight = { enable = true },
         incremental_selection = { enable = true },
@@ -60,8 +57,9 @@ return {
               ['ir'] = { query = '@return.inner', desc = 'inner return statement' },
             },
             include_surrounding_whitespace = function(table)
-              if ends_with(table.query_string, 'outer') then
-                return false
+              -- Only include surrounding whitespace for outer text objects when deleting.
+              if vim.endswith(table.query_string, 'outer') and vim.v.operator == 'd' then
+                return true
               end
               return false
             end
