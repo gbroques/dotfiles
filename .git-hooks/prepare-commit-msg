@@ -6,12 +6,11 @@
 COMMIT_MSG_FILE=$1
 
 # Explanation of below command:
-# 1. Output git short status
-# 2. Get all working tree paths
-# 3. Get the base directory for all paths
-# 4. Get all unique base directories
-# 5. Sort unique base directories alphabetically
-# 6. Join them with a space
-packages=$(git status --short | cut -d' ' -f3 | sed -E 's/\/.+//' | uniq | sort | paste -sd ' ' -)
+# 1. Get paths for all added files
+# 2. Get the base directory for all paths
+# 3. Get all unique base directories
+# 4. Sort unique base directories alphabetically
+# 5. Join them with a space
+packages=$(git diff --name-only --cached | sed -E 's/\/.+//' | uniq | sort | paste -sd ' ' -)
 
 echo "($packages): $(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
