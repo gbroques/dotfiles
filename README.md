@@ -69,5 +69,6 @@ To setup:
 2. Ensure [`rg`](#ripgrep) is installed for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin.
 3. Ensure `make` is installed for [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation) plugin.
 4. Ensure [`fd`](#fd) is installed for [telescope-frecency.nvim](https://github.com/nvim-telescope/telescope-frecency.nvim) plugin.
-5. [Setup Neovim for specific languages](./nvim/.config/nvim/README.md#language-support).
+5. Ensure `tar`, `curl`, and a C compiler is installed for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements) plugin.
+6. [Setup Neovim for specific languages](./nvim/.config/nvim/README.md#language-support).
 
