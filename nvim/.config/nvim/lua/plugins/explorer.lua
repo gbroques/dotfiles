@@ -57,6 +57,9 @@ return {
             },
           },
         },
+        filters = {
+          git_ignored = false
+        },
         diagnostics = {
           enable = true,
           show_on_dirs = true,
