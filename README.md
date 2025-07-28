@@ -36,6 +36,12 @@ To install, see [Installation](https://github.com/BurntSushi/ripgrep?tab=readme-
 
 To install, see [Installation](https://github.com/sharkdp/fd?tab=readme-ov-file#installation).
 
+## delta
+
+[delta](https://dandavison.github.io/delta/) is a syntax-highlighting pager for `git`, `diff`, and `grep` output.
+
+To install, see [Installation](https://dandavison.github.io/delta/installation.html).
+
 ## fish
 
 [Fish](https://fishshell.com/) (the **f**riendly **i**nteractive **sh**ell) is a command-line shell focused on user-friendliness and a great [out-of-the-box](https://en.wikipedia.org/wiki/Out_of_the_box_(feature)) experience.
@@ -72,3 +78,18 @@ To setup:
 5. Ensure `tar`, `curl`, and a C compiler is installed for [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements) plugin.
 6. [Setup Neovim for specific languages](./nvim/.config/nvim/README.md#language-support).
 
+## git
+
+git is a distributed version control system.
+
+To setup:
+
+1. Ensure `git` is installed.
+2. Ensure [`delta`](#delta) is installed.
+3. Ensure [`nvim`](#nvim) is installed.
+4. If on a work machine, `touch ~/.gitconfig-work`:
+
+       [user]
+       	email = <work email>
+
+   Projects should be in a `~/Work` directory to apply this conditional configuration.
