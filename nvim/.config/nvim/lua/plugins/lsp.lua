@@ -73,6 +73,7 @@ return {
       -- https://github.com/LunarVim/Launch.nvim/blob/e4d2fb941ecce66cc012ee88ddb997dc9185aedc/lua/user/lspconfig.lua#L51-L116
       local servers = {
         'lua_ls',
+        'fish_lsp',
         'ts_ls',
         'eslint',
         'jedi_language_server',

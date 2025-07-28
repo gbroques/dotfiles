@@ -15,6 +15,16 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 ## Language Support
 
+### Fish
+
+1. Install the [fish language-server](https://www.fish-lsp.dev/) via Mason:
+
+       :MasonInstall fish-lsp
+
+2. Install the tree-sitter Fish parser from inside Neovim:
+
+       :TSInstall fish
+
 ### Java
 
 1. Install Java 21 in the following directory:
