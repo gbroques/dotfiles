@@ -92,4 +92,4 @@ To setup:
        [user]
        	email = <work email>
 
-   Projects should be in a `~/Work` directory to apply this conditional configuration.
+   Projects should be in a `~/Work` directory to apply this [conditional configuration](https://git-scm.com/docs/git-config#_conditional_includes).
