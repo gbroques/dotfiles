@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd('TextYankPost', { pattern = '*', callback = handle_h
 -- Automatically make the help window the only one on the screen.
 -- https://vi.stackexchange.com/a/39697
 vim.api.nvim_create_autocmd('BufWinEnter', {
-  group = vim.api.nvim_create_augroup('maximize_help', {}),
+  group = vim.api.nvim_create_augroup('maximize_help', { clear = true }),
   pattern = { '*.txt' },
   callback = function()
     if vim.o.filetype == 'help' then vim.cmd.wincmd('o') end
