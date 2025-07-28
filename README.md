@@ -12,17 +12,20 @@ gbroques' personal dotfiles managed with [GNU Stow](https://www.gnu.org/software
 
        git config core.hooksPath ./.git-hooks
 
-## zoxide
-
-[zoxide](https://github.com/ajeetdsouza/zoxide) is a more intelligent `cd` command.
-
-To install, see [Installation](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation).
-
 ## fzf
 
 [fzf](https://junegunn.github.io/fzf/) is a command-line fuzzy finder.
 
 To install, see [Installation](https://junegunn.github.io/fzf/installation/).
+
+## zoxide
+
+[zoxide](https://github.com/ajeetdsouza/zoxide) is a more intelligent `cd` command.
+
+To setup:
+
+1. [Install zoxide](https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation).
+2. Ensure [`fzf`](#fzf) is installed for completions and interactive selection.
 
 ## ripgrep
 
