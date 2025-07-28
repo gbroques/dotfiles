@@ -103,10 +103,6 @@ if test "$os" = Darwin
     set -gx JAVA_HOME /Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
 end
 
-if string match -q "*CYGWIN*" (uname -a)
-    cd (cygpath $USERPROFILE)/Projects
-end
-
 if test -e ~/.config/fish/secrets.fish
     source ~/.config/fish/secrets.fish
 end
