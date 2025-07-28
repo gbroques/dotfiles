@@ -66,9 +66,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 * https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
 * https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/eslint.lua#L171
 
-2. Install the tree-sitter JavaScript parser from inside Neovim:
+2. Install the tree-sitter JavaScript, HTML, and CSS parser from inside Neovim:
 
-       :TSInstall javascript
+       :TSInstall javascript html css
 
 3. Setup ESLint for formatting and diagnostics.
 
