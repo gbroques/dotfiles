@@ -133,6 +133,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `r`eturn statement (*tree-sitter*)
 * `s`entence (*built-in*)
 * `t`ag (*built-in*)
+* `x` attribute (*tree-sitter*)
 * `[]`, `<>`, `()`, `{}`, `"`, `'`, `` ` `` (*built-in*)
 
 See `:help text-objects` for details on built-in text-objects.

@@ -55,6 +55,12 @@ return {
               ['il'] = { query = '@loop.inner', desc = 'inner loop' },
               ['ar'] = { query = '@return.outer', desc = 'a return statement' },
               ['ir'] = { query = '@return.inner', desc = 'inner return statement' },
+              -- Mnemonic: "Attr" sounds like "adder" which is close to the "add" symbol "+"
+              --           rotated 45 degrees gives you x.
+              --           x is also used for HTML / XML attributes in chrisgrieser/nvim-various-textobjs.
+              --           Supported in HTML and JavaScript.
+              ['ax'] = { query = '@attribute.outer', desc = 'a attribute' },
+              ['ix'] = { query = '@attribute.inner', desc = 'inner attribute' },
             },
             include_surrounding_whitespace = function(table)
               -- Only include surrounding whitespace for outer text objects when deleting.
