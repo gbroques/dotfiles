@@ -139,8 +139,8 @@ return {
       vim.keymap.set('x', 'gs', require('substitute').visual, { noremap = true })
     end
   },
-  -- gs is taken by vim.lsp.buf.signature_help currently
-  -- s will be used for leap
+  -- gs is taken by substitute.nvim currently
+  -- s is used for leap
   -- { 'simrat39/symbols-outline.nvim' },
   -- { 'kosayoda/nvim-lightbulb' },
 
