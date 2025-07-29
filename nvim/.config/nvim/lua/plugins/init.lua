@@ -74,9 +74,8 @@ return {
     end
   },
   {
-    -- TODO: Consider https://github.com/ggandor/flit.nvim for enhanced f and t.
     'ggandor/leap.nvim',
-    commit = '68ca052dfdcda5e4e958d1ba0fef35e94a3e02e8',
+    commit = 'ebaf38f7fd7193cc918c10eb955afed63301cd76',
     config = function()
       -- Map z instead of s in operator pending mode as it conflicts with cs, ds, and ys for surround in normal mode.
       -- https://www.reddit.com/r/neovim/comments/13j3j45/comment/jkcuj2b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
@@ -85,6 +84,15 @@ return {
       vim.keymap.set({ 'n', 'x' }, 'S', '<Plug>(leap-backward)')
       vim.keymap.set('o', 'z', '<Plug>(leap-forward)')
       vim.keymap.set('o', 'Z', '<Plug>(leap-backward)')
+    end
+  },
+  {
+    -- Enhanced f / F and t / T motions built on the leap interface.
+    'ggandor/flit.nvim',
+    commit = '7fbf60207cc170be75db3f42e6f6db0d4d887e5d',
+    dependencies = { 'ggandor/leap.nvim' },
+    config = function()
+      require('flit').setup()
     end
   },
   -- TODO: Plugins under consideration:
