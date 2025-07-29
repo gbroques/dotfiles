@@ -57,9 +57,10 @@ To setup:
 1. Install Fish by [following the instructions on the website](https://fishshell.com/).
 2. Install [Fisher](https://github.com/jorgebucaran/fisher), a plugin manager for Fish.
 3. Install the [autopair plugin](https://github.com/jorgebucaran/autopair.fish) to automatically insert, erase, and skip matching pairs (e.g. "").
-4. Ensure [`fzf`](#fzf) is installed for CTRL-T, CTRL-R, and ALT-C [key bindings](https://junegunn.github.io/fzf/shell-integration/#key-bindings).
-5. Ensure [`zoxide`](#zoxide) is installed for more intelligent directory changing.
-6. A `secrets.fish` may be created in [./fish/.config/fish/](./fish/.config/fish/) for any sensitive or proprietary configuration in a private work environment.
+4. Install the [colored_man_pages.fish plugin](https://github.com/PatrickF1/colored_man_pages.fish/) to color `man` pages.
+5. Ensure [`fzf`](#fzf) is installed for CTRL-T, CTRL-R, and ALT-C [key bindings](https://junegunn.github.io/fzf/shell-integration/#key-bindings).
+6. Ensure [`zoxide`](#zoxide) is installed for more intelligent directory changing.
+7. A `secrets.fish` may be created in [./fish/.config/fish/](./fish/.config/fish/) for any sensitive or proprietary configuration in a private work environment.
 
 ## alacritty
 
