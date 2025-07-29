@@ -87,12 +87,21 @@ return {
     end
   },
   {
-    -- Enhanced f / F and t / T motions built on the leap interface.
-    'ggandor/flit.nvim',
-    commit = '7fbf60207cc170be75db3f42e6f6db0d4d887e5d',
-    dependencies = { 'ggandor/leap.nvim' },
+    -- Enhanced f / F and t / T by highlighting unique letters for each word on the cursor line.
+    'jinh0/eyeliner.nvim',
+    commit = '8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6',
+    dependencies = {
+      'folke/tokyonight.nvim'
+    },
     config = function()
-      require('flit').setup()
+      require('eyeliner').setup({
+        highlight_on_key = true
+      })
+      local colors = require('tokyonight.colors').setup()
+      -- TODO: Should I contribute this to tokyonight theme?
+      -- Based on https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/base.lua#L56-L57
+      vim.api.nvim_set_hl(0, 'EyelinerPrimary', { bg = colors.orange, fg = colors.black })
+      vim.api.nvim_set_hl(0, 'EyelinerSecondary', { bg = colors.bg_search, fg = colors.fg })
     end
   },
   -- TODO: Plugins under consideration:
