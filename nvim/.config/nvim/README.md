@@ -33,9 +33,9 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 2. Save formatter settings at `~/.vscode/formatter.xml`.
 
-3. Install the tree-sitter Java parser from inside Neovim:
+3. Install the tree-sitter Java and XML parsers from inside Neovim:
 
-       :TSInstall java
+       :TSInstall java xml
 
 4. Install the following dependencies via Mason (to find the latest versions goto https://mason-registry.dev/registry/list):
 
