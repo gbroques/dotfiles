@@ -117,3 +117,9 @@ To setup:
 
        bat cache --build
 
+## tmux
+
+[tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer to run several programs in one terminal.
+
+To install, see [Installing](https://github.com/tmux/tmux/wiki/Installing).
+
