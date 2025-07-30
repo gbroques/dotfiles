@@ -6,9 +6,8 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       {
-        -- TODO: Switch to https://github.com/tronikelis/ts-autotag.nvim
-        'windwp/nvim-ts-autotag',
-        commit = 'a1d526af391f6aebb25a8795cbc05351ed3620b5',
+        'tronikelis/ts-autotag.nvim',
+        commit = '0f1dc38fddd99b468ef58938d7cd99ce1d6bcb0e',
         config = true
       },
       {
