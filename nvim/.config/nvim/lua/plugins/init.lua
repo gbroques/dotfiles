@@ -86,6 +86,7 @@ return {
       vim.keymap.set('o', 'Z', '<Plug>(leap-backward)')
     end
   },
+  -- TODO: Add https://github.com/rasulomaroff/telepath.nvim for remote operations.
   {
     -- Enhanced f / F and t / T by highlighting unique letters for each word on the cursor line.
     'jinh0/eyeliner.nvim',
