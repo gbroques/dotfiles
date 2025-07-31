@@ -3,7 +3,7 @@ local colors_module = require('colors')
 return {
   {
     'rebelot/heirline.nvim',
-    commit = 'fae936abb5e0345b85c3a03ecf38525b0828b992',
+    tag = 'v1.0.8',
     event = 'VeryLazy',
     dependencies = {
       {

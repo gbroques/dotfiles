@@ -76,6 +76,7 @@ return {
   {
     -- TODO: Add visual indicator upon pressing s / S.
     -- For example, status bar could say LEAP and change colors.
+    -- See https://github.com/rebelot/heirline.nvim/issues/220
     'ggandor/leap.nvim',
     commit = 'ebaf38f7fd7193cc918c10eb955afed63301cd76',
     dependencies = {
