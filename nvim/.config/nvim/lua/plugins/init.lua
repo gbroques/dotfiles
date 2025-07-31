@@ -80,6 +80,7 @@ return {
       -- Map z instead of s in operator pending mode as it conflicts with cs, ds, and ys for surround in normal mode.
       -- https://www.reddit.com/r/neovim/comments/13j3j45/comment/jkcuj2b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
       -- x is for visual mode, see :help map-modes
+      -- TODO: Disable greying out the search area and use tokyonight's search styles
       vim.keymap.set({ 'n', 'x' }, 's', '<Plug>(leap-forward)')
       vim.keymap.set({ 'n', 'x' }, 'S', '<Plug>(leap-backward)')
       vim.keymap.set('o', 'z', '<Plug>(leap-forward)')
