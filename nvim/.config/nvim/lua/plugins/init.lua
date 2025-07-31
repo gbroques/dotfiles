@@ -107,6 +107,8 @@ return {
   },
   -- TODO: Plugins under consideration:
   -- { 'andymas/vim-matchup' },
+  -- TODO: Interferes with rendering C in statusline for : and /
+  --       https://github.com/sphamba/smear-cursor.nvim/issues/150
   {
     'sphamba/smear-cursor.nvim',
     opts = {
