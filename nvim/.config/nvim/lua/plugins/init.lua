@@ -74,17 +74,42 @@ return {
     end
   },
   {
+    -- TODO: Add visual indicator upon pressing s / S.
+    -- For example, status bar could say LEAP and change colors.
     'ggandor/leap.nvim',
     commit = 'ebaf38f7fd7193cc918c10eb955afed63301cd76',
+    dependencies = {
+      'folke/tokyonight.nvim'
+    },
     config = function()
       -- Map z instead of s in operator pending mode as it conflicts with cs, ds, and ys for surround in normal mode.
       -- https://www.reddit.com/r/neovim/comments/13j3j45/comment/jkcuj2b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
       -- x is for visual mode, see :help map-modes
-      -- TODO: Disable greying out the search area and use tokyonight's search styles
       vim.keymap.set({ 'n', 'x' }, 's', '<Plug>(leap-forward)')
       vim.keymap.set({ 'n', 'x' }, 'S', '<Plug>(leap-backward)')
       vim.keymap.set('o', 'z', '<Plug>(leap-forward)')
       vim.keymap.set('o', 'Z', '<Plug>(leap-backward)')
+
+      -- https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/leap.lua#L9-L11
+      local colors = require('tokyonight.colors').setup()
+      vim.api.nvim_set_hl(0, 'LeapMatch', { bg = colors.bg_search, fg = colors.fg })
+      vim.api.nvim_set_hl(0, 'LeapLabel', { bg = colors.bg_search, fg = colors.fg })
+      vim.api.nvim_set_hl(0, 'LeapBackdrop', { fg = 'none' })
+
+      -- Center screen vertically upon automatically leaping to second character in search pattern.
+      -- See: https://github.com/ggandor/leap.nvim/issues/256#issuecomment-2480668362
+      vim.api.nvim_create_autocmd('User', {
+        group = vim.api.nvim_create_augroup('center_screen_upon_leap', { clear = true }),
+        pattern = 'LeapEnter',
+        callback = function()
+          vim.api.nvim_create_autocmd('CursorMoved', {
+            once = true,
+            callback = function()
+              vim.cmd('normal! zz')
+            end,
+          })
+        end,
+      })
     end
   },
   -- TODO: Add https://github.com/rasulomaroff/telepath.nvim for remote operations.
