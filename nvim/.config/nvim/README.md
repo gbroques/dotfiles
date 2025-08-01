@@ -133,6 +133,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `r`eturn statement (*tree-sitter*)
 * `s`entence (*built-in*)
 * `t`ag (*built-in*)
+* `v` subword (v is a small w) (*nvim-various-textobjs*)
 * `x` attribute (*tree-sitter*)
 * `[]`, `<>`, `()`, `{}`, `"`, `'`, `` ` `` (*built-in*)
 

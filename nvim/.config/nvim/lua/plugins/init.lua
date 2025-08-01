@@ -156,15 +156,30 @@ return {
   -- { 'SmiteshP/nvim-navic' },
   -- { 'chentoast/marks.nvim' },
   -- { 'chrisgrieser/nvim-rip-substitute' },
-  -- { 'chrisgrieser/nvim-spider' }, -- camel case / snake case motions
+  {
+    'chrisgrieser/nvim-spider',
+    commit = '6da0307421bc4be6fe02815faabde51007c4ea1a',
+    config = function()
+      require('spider').setup()
+      vim.keymap.set({ 'n', 'o', 'x' }, 'w', "<cmd>lua require('spider').motion('w')<CR>")
+      vim.keymap.set({ 'n', 'o', 'x' }, 'e', "<cmd>lua require('spider').motion('e')<CR>")
+      vim.keymap.set({ 'n', 'o', 'x' }, 'b', "<cmd>lua require('spider').motion('b')<CR>")
+    end
+  },
+  -- Similar to subword text object in nvim-various-textobjs, but uses v instead of S.
+  -- { 'Julian/vim-textobj-variable-segment' },
+  -- text objects of interest are subword, quote, value, key, number, and html attribute
+  {
+    'chrisgrieser/nvim-various-textobjs',
+    event = 'VeryLazy',
+    config = function()
+      vim.keymap.set({ 'o', 'x' }, 'av', '<cmd>lua require("various-textobjs").subword("outer")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'iv', '<cmd>lua require("various-textobjs").subword("inner")<CR>')
+    end
+  },
 
   -- TEXT OBJECTS PLUGINS
   -- Read https://thevaluable.dev/vim-create-text-objects/
-  -- Similar to subword text object in nvim-various-textobjs, but uses v instead of S.
-  -- { 'Julian/vim-textobj-variable-segment' },
-
-  -- text objects of interest are subword, quote, value, key, number, and html attribute
-  -- { 'chrisgrieser/nvim-various-textobjs' },
 
   -- Has special operators to specially handle whitespace (like `I` and `A`)
   -- { 'wellle/targets.vim' },
