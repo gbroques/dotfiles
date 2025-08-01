@@ -130,6 +130,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `l`oop (*tree-sitter*)
 * `p`aragraph (*built-in*)
 * `w`ord (*built-in*)
+* `q`uote ('', "", and ``) (*nvim-various-textobjs*)
 * `r`eturn statement (*tree-sitter*)
 * `s`entence (*built-in*)
 * `t`ag (*built-in*)

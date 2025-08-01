@@ -177,6 +177,8 @@ return {
     config = function()
       vim.keymap.set({ 'o', 'x' }, 'av', '<cmd>lua require("various-textobjs").subword("outer")<CR>')
       vim.keymap.set({ 'o', 'x' }, 'iv', '<cmd>lua require("various-textobjs").subword("inner")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'aq', '<cmd>lua require("various-textobjs").anyQuote("outer")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'iq', '<cmd>lua require("various-textobjs").anyQuote("inner")<CR>')
     end
   },
 
