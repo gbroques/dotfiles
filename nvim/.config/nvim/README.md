@@ -61,10 +61,10 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :MasonInstall typescript-language-server eslint-lsp
 
-**References:** (if MasonInstall fails)
+   **References:** (if MasonInstall fails)
 
-* https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
-* https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/eslint.lua#L171
+   * https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/ts_ls.lua#L26
+   * https://github.com/neovim/nvim-lspconfig/blob/v2.3.0/lua/lspconfig/configs/eslint.lua#L171
 
 2. Install the tree-sitter JavaScript, HTML, and CSS parser from inside Neovim:
 
