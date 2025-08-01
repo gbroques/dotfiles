@@ -76,7 +76,7 @@ vim.opt.laststatus = 3            -- Enable 'global' statusline; https://www.you
 vim.opt.splitright = true         -- Put new buffer on the right for vertical splits
 vim.opt.splitbelow = true         -- Put new buffer on the bottom for horizontal splits
 vim.opt.fillchars:append { diff = " " }
-vim.opt.guifont = 'JetBrainsMono NF'
+vim.opt.guifont = 'JetBrainsMono NF:h22'
 if vim.fn.has('macunix') == 0 then
   vim.opt.shell = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
 end
