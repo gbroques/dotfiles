@@ -119,6 +119,7 @@ return {
     -- Enhanced f / F and t / T by highlighting unique letters for each word on the cursor line.
     -- TODO: Highlights remain after yank and change operations. See:
     --       https://github.com/jinh0/eyeliner.nvim/issues/63
+    -- TODO: camelCase / PascalCase aren't considered separate "words".
     'jinh0/eyeliner.nvim',
     commit = '8f197eb30cecdf4c2cc9988a5eecc6bc34c0c7d6',
     dependencies = {
