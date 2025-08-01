@@ -69,6 +69,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('dressing').setup({
+        input = { start_in_insert = false, start_mode = 'normal' },
         select = { enabled = false }
       })
     end
