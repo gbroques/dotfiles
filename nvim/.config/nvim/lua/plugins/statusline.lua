@@ -41,6 +41,8 @@ return {
         command = colors.yellow,
         visual = colors.magenta,
         replace = colors.red,
+        operator_pending = colors.red,
+        ex = colors.red,
         terminal = colors.green,
       }
 
@@ -50,13 +52,12 @@ return {
           mode_colors = {
             -- :help mode()
             -- :help vim-modes
-            -- TODO: Add different colors for different modes even if the less obscure modes are all red like replace
             ['n']     = mode_colors.normal,
-            ['no']    = mode_colors.replace,
-            ['nov']   = mode_colors.replace,
-            ['noV']   = mode_colors.replace,
+            ['no']    = mode_colors.operator_pending,
+            ['nov']   = mode_colors.operator_pending,
+            ['noV']   = mode_colors.operator_pending,
             -- CTRL-V
-            ['no\22'] = mode_colors.replace,
+            ['no\22'] = mode_colors.operator_pending,
             ['niI']   = mode_colors.normal,
             ['niR']   = mode_colors.normal,
             ['niV']   = mode_colors.normal,
@@ -83,8 +84,9 @@ return {
             ['Rvc']   = mode_colors.visual,
             ['Rvx']   = mode_colors.visual,
             ['c']     = mode_colors.command,
-            ['cv']    = mode_colors.terminal,
-            ['ce']    = mode_colors.terminal,
+            ['cv']    = mode_colors.ex,
+            -- TODO: ce isn't documented in :help mode()
+            ['ce']    = mode_colors.ex,
             ['r']     = mode_colors.replace,
             ['rm']    = mode_colors.replace,
             ['r?']    = mode_colors.replace,
@@ -140,6 +142,7 @@ return {
             ['Rvx']   = 'V-REPLACE',
             ['c']     = 'COMMAND',
             ['cv']    = 'EX',
+            -- TODO: ce isn't documented in :help mode()
             ['ce']    = 'EX',
             ['r']     = 'REPLACE',
             ['rm']    = 'MORE',
