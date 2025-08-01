@@ -77,7 +77,8 @@ return {
         'ts_ls',
         'eslint',
         'jedi_language_server',
-        'clangd'
+        'clangd',
+        'fennel_ls'
       }
       for _, server in ipairs(servers) do
         local opts = {}

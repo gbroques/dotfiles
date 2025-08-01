@@ -90,6 +90,20 @@ Install the tree-sitter Python parser from inside Neovim:
 
     :TSInstall python
 
+### Fennel
+
+A few plugins such as `leap.nvim` and `eyeliner.nvim` are written in [Fennel](https://fennel-lang.org/), a lisp-like language that compiles to Lua.
+
+1. Install [fennel-ls](https://git.sr.ht/~xerool/fennel-ls), the Fennel language server:
+
+       :MasonInstall fennel-ls
+
+   Requires `luarocks` to be in the `PATH`.
+
+2. Install the Fennel tree-sitter parser:
+
+       :TSInstall fennel
+
 ### YAML
 
 Install the [YAML language server](https://github.com/redhat-developer/yaml-language-server):
