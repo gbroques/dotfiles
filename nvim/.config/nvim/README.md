@@ -104,6 +104,14 @@ A few plugins such as `leap.nvim` and `eyeliner.nvim` are written in [Fennel](ht
 
        :TSInstall fennel
 
+3. To enable `vim.*` autocompletion, download `nvim.lua` to `~/.local/share/fennel-ls/docsets/` from [micampe/fennel-ls-nvim-docs](https://git.sr.ht/~micampe/fennel-ls-nvim-docs/).
+
+4. Create a `flsproject.fnl` file in root of your Fennel project directory (usually `fnl/`) with the `nvim` library set to `true`:
+
+       echo '{:libraries { :nvim true }}' > ./flsproject.fnl
+
+Steps 3 and 4 are described in the [fennel-ls manual](https://git.sr.ht/~xerool/fennel-ls/tree/HEAD/item/docs/manual.md#quick-start).
+
 ### YAML
 
 Install the [YAML language server](https://github.com/redhat-developer/yaml-language-server):
