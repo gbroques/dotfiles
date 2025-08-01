@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Article on why space for the leader key:
 -- https://raindev.io/blog/space-leader/
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
 -------------------------------------------------------
 
 require('lazy').setup('plugins', {

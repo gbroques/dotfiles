@@ -182,6 +182,14 @@ return {
       vim.keymap.set({ 'o', 'x' }, 'iq', '<cmd>lua require("various-textobjs").anyQuote("inner")<CR>')
     end
   },
+  {
+    -- Interactive evaluation
+    -- :ConjureSchool for a tutorial.
+    -- https://oli.me.uk/Blog+archive/2020/Conversational+software+development
+    'Olical/conjure',
+    ft = { 'lua', 'fennel', 'python' },
+    commit = '0ac12d481141555cc4baa0ad656b590ed30d2090'
+  },
 
   -- TEXT OBJECTS PLUGINS
   -- Read https://thevaluable.dev/vim-create-text-objects/
