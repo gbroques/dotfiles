@@ -142,6 +142,7 @@ return {
   --       https://github.com/sphamba/smear-cursor.nvim/issues/150
   {
     'sphamba/smear-cursor.nvim',
+    commit = '58e69a911e7f5296b3d7fec5e7414df5a4ac91fb',
     opts = {
       -- Smooth cursor without smear
       stiffness = 0.5,
