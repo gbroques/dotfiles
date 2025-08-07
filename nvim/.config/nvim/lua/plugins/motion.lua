@@ -70,6 +70,8 @@ return {
     end
   },
   {
+    -- TODO: leap.nvim author says telepath.nvim isn't needed:
+    -- https://www.reddit.com/r/neovim/comments/1dy5z0n/comment/lc846jz/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
     'rasulomaroff/telepath.nvim',
     commit = '2879da05463db7bdc8824b13cccd8e8920c62a55',
     dependencies = 'ggandor/leap.nvim',
