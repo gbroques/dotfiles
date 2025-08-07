@@ -92,9 +92,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- set_lsp_keymap('n', 'gs', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
     set_lsp_keymap('n', 'gy', vim.lsp.buf.type_definition, { desc = 'Goto t(y)pe definition' })
     -- TODO
-    -- Consider lspsaga https://nvimdev.github.io/lspsaga/codeaction/
-    -- which offers a preview of the code action.
-    -- Also consider https://github.com/aznhe21/actions-preview.nvim
+    -- Consider the following plugins which offer a preview of the code action:
+    -- lspsaga https://nvimdev.github.io/lspsaga/codeaction/
+    -- https://github.com/aznhe21/actions-preview.nvim
+    -- https://github.com/rachartier/tiny-code-action.nvim
     set_lsp_keymap({ 'n', 'v' }, '<leader>la', vim.lsp.buf.code_action, { desc = 'Actions' })
     set_lsp_keymap('n', '<leader>lf', function()
       vim.lsp.buf.format { async = true }
