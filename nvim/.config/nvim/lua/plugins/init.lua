@@ -71,6 +71,10 @@ return {
   -- { 'hedyhli/outline.nvim' },
   -- { 'kosayoda/nvim-lightbulb' },
   -- { 'andymass/vim-matchup' },
+  --
+  -- repeat
+  -- { 'ghostbuster91/nvim-next' }
+  -- { 'mawkler/demicolon.nvim' }
 
   -- text objects of interest are subword, quote, value, key, number, and html attribute
   {

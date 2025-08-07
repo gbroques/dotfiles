@@ -105,7 +105,6 @@ return {
           },
         }
       })
-      -- TODO: Try ghostbuster91/nvim-next
     end
   },
 
