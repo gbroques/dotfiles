@@ -172,10 +172,6 @@ return {
   -- },
 
   -- Utility
-  -- TODO: Look at opening last edited file automatically or automatically saving sessions per project
-  -- https://neovimcraft.com/?search=tag%3Asession
-  -- https://github.com/folke/persistence.nvim - is very simple and creates the session by folder + branch.
-  -- Need to create an autocmd to automatically load the session.
   {
     'nvim-lua/plenary.nvim',
     commit = '857c5ac632080dba10aae49dba902ce3abf91b35',
