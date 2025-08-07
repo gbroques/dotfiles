@@ -21,8 +21,8 @@ return {
     end
   },
   {
-    -- TODO: Add visual indicator upon pressing s / S.
-    -- For example, status bar could say LEAP and change colors.
+    -- TODO: Improve visual indicator upon pressing s / S.
+    -- Statusline could say LEAP for the mode and change colors to red or yellow.
     -- See https://github.com/rebelot/heirline.nvim/issues/220
     'ggandor/leap.nvim',
     commit = 'ebaf38f7fd7193cc918c10eb955afed63301cd76',
@@ -47,15 +47,24 @@ return {
       -- Center screen vertically upon automatically leaping to second character in search pattern.
       -- See: https://github.com/ggandor/leap.nvim/issues/256#issuecomment-2480668362
       vim.api.nvim_create_autocmd('User', {
-        group = vim.api.nvim_create_augroup('center_screen_upon_leap', { clear = true }),
+        group = vim.api.nvim_create_augroup('leap_enter', { clear = true }),
         pattern = 'LeapEnter',
         callback = function()
+          print('LEAP')
           vim.api.nvim_create_autocmd('CursorMoved', {
             once = true,
             callback = function()
               vim.cmd('normal! zz')
             end,
           })
+        end,
+      })
+      vim.api.nvim_create_autocmd('User', {
+        group = vim.api.nvim_create_augroup('leap_leave', { clear = true }),
+        pattern = 'LeapLeave',
+        callback = function()
+          -- Clear LEAP message
+          print()
         end,
       })
     end
