@@ -45,6 +45,8 @@ return {
     end
   },
   {
+    -- Upgrade to fix vim.validate deprecation warning:
+    -- https://github.com/smjonas/live-command.nvim/issues/45
     'smjonas/live-command.nvim',
     commit = '05b9f886628f3e9e6122e734c1fac4f13dcb64b4',
     event = { 'BufReadPre', 'BufNewFile' },
