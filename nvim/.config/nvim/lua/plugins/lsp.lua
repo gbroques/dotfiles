@@ -121,7 +121,7 @@ return {
     -- need to figure out eslint_d alternative
     -- See lsp.lua
     'nvimtools/none-ls.nvim',
-    commit = 'dcc8cd4efdcb29275681a3c95786a816330dbca6',
+    commit = '5fcb73913a9290f78097e34420fe0e6130c5c33c',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local null_ls = require('null-ls')
