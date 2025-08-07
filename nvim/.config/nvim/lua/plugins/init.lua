@@ -27,15 +27,13 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = true
   },
-  -- TODO:
-  -- Try echasnovski/mini.surround?
   {
+    -- TODO:
+    -- Try echasnovski/mini.surround?
     'kylechui/nvim-surround',
     tag = 'v3.1.2',
     event = 'VeryLazy',
-    dependencies = {
-      'folke/tokyonight.nvim'
-    },
+    dependencies = { 'folke/tokyonight.nvim' },
     config = function()
       require('nvim-surround').setup()
       local colors = require('tokyonight.colors').setup()
@@ -76,10 +74,6 @@ return {
       })
     end
   },
-  -- TODO: Plugins under consideration:
-  -- { 'andymas/vim-matchup' },
-  -- TODO: Interferes with rendering C in statusline for : and /
-  --       https://github.com/sphamba/smear-cursor.nvim/issues/150
   {
     'sphamba/smear-cursor.nvim',
     commit = '58e69a911e7f5296b3d7fec5e7414df5a4ac91fb',
@@ -91,6 +85,7 @@ return {
       matrix_pixel_threshold = 0.5,
     },
   },
+  -- TODO: Plugins under consideration:
   --
   -- smooth scrolling
   -- { 'karb94/neoscroll.nvim' },
@@ -99,6 +94,10 @@ return {
   -- { 'SmiteshP/nvim-navic' },
   -- { 'chentoast/marks.nvim' },
   -- { 'chrisgrieser/nvim-rip-substitute' },
+  -- { 'simrat39/symbols-outline.nvim' }, ARCHIVED
+  -- { 'kosayoda/nvim-lightbulb' },
+  -- { 'andymass/vim-matchup' },
+
   -- text objects of interest are subword, quote, value, key, number, and html attribute
   {
     'chrisgrieser/nvim-various-textobjs',
@@ -119,15 +118,6 @@ return {
     ft = { 'lua', 'fennel', 'python' },
     commit = '0ac12d481141555cc4baa0ad656b590ed30d2090'
   },
-
-  -- TEXT OBJECTS PLUGINS
-  -- Read https://thevaluable.dev/vim-create-text-objects/
-
-  -- Has special operators to specially handle whitespace (like `I` and `A`)
-  -- { 'wellle/targets.vim' },
-
-  -- ciq - change in quotes "" '' or ``
-  -- { 'echasnovski/mini.ai' },
   {
     'gbprod/substitute.nvim',
     commit = '9db749a880e3dd3b0eb57f698aa8f1e1630e1f25',
@@ -137,10 +127,6 @@ return {
       vim.keymap.set('x', 'gs', require('substitute').visual, { noremap = true })
     end
   },
-  -- gs is taken by substitute.nvim currently
-  -- s is used for leap
-  -- { 'simrat39/symbols-outline.nvim' },
-  -- { 'kosayoda/nvim-lightbulb' },
 
   -- Java
   {
@@ -151,6 +137,7 @@ return {
   },
   -- TODO: Consider java.nvim for file renames.
   -- https://github.com/simaxme/java.nvim/tree/main
+
   -- YAML & JSON
   -- TODO:
   -- YAML Language Server doesn't work with openapi 3.0
