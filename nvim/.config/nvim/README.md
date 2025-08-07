@@ -121,8 +121,10 @@ Install the [YAML language server](https://github.com/redhat-developer/yaml-lang
 ## Operators
 
 * `c`hange (*built-in*)
+* `cr` change remote (*telepath.nvim*)
 * `cs` change surrounding (*surround.vim*)
 * `d`elete (*built-in*)
+* `dr` delete remote (*telepath.nvim*)
 * `ds` delete surrounding (*surround.vim*)
 * `gb` go blockwise comment (*Comment.nvim*)
 * `gc` go linewise comment (*Comment.nvim*)
@@ -130,6 +132,7 @@ Install the [YAML language server](https://github.com/redhat-developer/yaml-lang
 * `gu` make lowercase (*built-in*)
 * `gU` make uppercase (*built-in*)
 * `y`ank (*built-in*)
+* `yr` yank remote (*telepath.nvim*)
 * `ys` add surrounding (*surround.vim*)
 * `>` shift right (*built-in*)
 * `<` shift left (*built-in*)

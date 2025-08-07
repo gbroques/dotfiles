@@ -116,7 +116,18 @@ return {
       })
     end
   },
-  -- TODO: Add https://github.com/rasulomaroff/telepath.nvim for remote operations.
+  {
+    'rasulomaroff/telepath.nvim',
+    commit = '2879da05463db7bdc8824b13cccd8e8920c62a55',
+    dependencies = 'ggandor/leap.nvim',
+    lazy = false,
+    config = function()
+      vim.keymap.set('o', 'r', function()
+          require('telepath').remote({ restore = true })
+        end,
+        { desc = 'Remote action' })
+    end
+  },
   {
     -- Enhanced f / F and t / T by highlighting unique letters for each word on the cursor line.
     -- TODO: Highlights remain after yank and change operations. See:
