@@ -118,7 +118,6 @@ return {
     -- 'stevearc/conform.nvim' - Lightweight yet powerful formatter plugin for Neovim
     -- 'mattn/efm-langserver' - General purpose Language Server that can use specified error message format generated from specified command.
     -- 'iamcco/diagnostic-languageserver' - General purpose Language Server that integrate with linter to support diagnostic features
-    -- need to figure out eslint_d alternative
     -- See lsp.lua
     'nvimtools/none-ls.nvim',
     commit = '5fcb73913a9290f78097e34420fe0e6130c5c33c',
@@ -126,23 +125,9 @@ return {
     config = function()
       local null_ls = require('null-ls')
 
-      -- local eslint_config_path = os.getenv('ESLINT_CONFIG_PATH')
-
       null_ls.setup({
         debug = true,
         sources = {
-          -- TODO
-          -- https://github.com/nvimtools/none-ls.nvim/issues/58
-          -- JavaScript
-          -- Pass --debug in extra_args to troubleshoot issues.
-          -- use eslint-language-server instead
-          -- null_ls.builtins.diagnostics.eslint_d.with({
-          --   extra_args = { '--config', eslint_config_path }
-          -- }),
-          -- null_ls.builtins.formatting.eslint_d.with({
-          --   extra_args = { '--config', eslint_config_path }
-          -- }),
-
           -- Python
           -- use ruff / available in none-ls-extras.nvim
           -- https://github.com/astral-sh/ruff-lsp
