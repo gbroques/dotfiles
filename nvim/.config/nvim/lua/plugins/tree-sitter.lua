@@ -46,9 +46,8 @@ return {
               ['ia'] = { query = '@parameter.inner', desc = 'inner argument' },
               ['ac'] = { query = '@class.outer', desc = 'a class' },
               ['ic'] = { query = '@class.inner', desc = 'inner class' },
-              -- TODO: d for decision?
-              ['ad'] = { query = '@conditional.outer', desc = 'a con(d)itional' },
-              ['id'] = { query = '@conditional.inner', desc = 'inner con(d)itional' },
+              ['ad'] = { query = '@conditional.outer', desc = 'a decision or con(d)itional' },
+              ['id'] = { query = '@conditional.inner', desc = 'inner decision or con(d)itional' },
               ['af'] = { query = '@function.outer', desc = 'a function' },
               ['if'] = { query = '@function.inner', desc = 'inner function' },
               ['al'] = { query = '@loop.outer', desc = 'a loop' },

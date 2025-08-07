@@ -147,7 +147,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `b` alias for () (*built-in*)
 * `B` alias for {} (*built-in*)
 * `c`lass (*tree-sitter*)
-* con`d`itional (*tree-sitter*)
+* `d`ecision / con`d`itional (*tree-sitter*)
 * `f`unction (*tree-sitter*)
 * `gn` next search pattern (*built-in*)
 * `gN` last search pattern (*built-in*)
