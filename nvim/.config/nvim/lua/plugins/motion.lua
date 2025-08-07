@@ -1,5 +1,16 @@
 return {
   {
+    'sphamba/smear-cursor.nvim',
+    commit = '58e69a911e7f5296b3d7fec5e7414df5a4ac91fb',
+    opts = {
+      -- Smooth cursor without smear
+      stiffness = 0.5,
+      trailing_stiffness = 0.5,
+      damping = 0.67,
+      matrix_pixel_threshold = 0.5,
+    },
+  },
+  {
     'chrisgrieser/nvim-spider',
     commit = '6da0307421bc4be6fe02815faabde51007c4ea1a',
     config = function()

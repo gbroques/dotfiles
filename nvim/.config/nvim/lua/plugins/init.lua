@@ -59,17 +59,6 @@ return {
       })
     end
   },
-  {
-    'sphamba/smear-cursor.nvim',
-    commit = '58e69a911e7f5296b3d7fec5e7414df5a4ac91fb',
-    opts = {
-      -- Smooth cursor without smear
-      stiffness = 0.5,
-      trailing_stiffness = 0.5,
-      damping = 0.67,
-      matrix_pixel_threshold = 0.5,
-    },
-  },
   -- TODO: Plugins under consideration:
   --
   -- smooth scrolling
