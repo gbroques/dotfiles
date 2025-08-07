@@ -32,6 +32,8 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       {
         -- Neovim Plugin Development
+        -- TODO: Upgrade before Neovim 0.13 to fix client.notify deprecation warning:
+        -- https://github.com/folke/lazydev.nvim/issues/114
         'folke/lazydev.nvim',
         tag = 'v1.9.0',
         ft = 'lua', -- only load on lua files
