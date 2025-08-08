@@ -93,8 +93,8 @@ return {
     -- :ConjureSchool for a tutorial.
     -- https://oli.me.uk/Blog+archive/2020/Conversational+software+development
     'Olical/conjure',
-    ft = { 'lua', 'fennel', 'python' },
-    commit = '0ac12d481141555cc4baa0ad656b590ed30d2090'
+    ft = { 'lua', 'javascript', 'fennel', 'python' },
+    commit = '0649a6866017e61457d8f5093827fd48db8a08f1'
   },
 
   -- Java
