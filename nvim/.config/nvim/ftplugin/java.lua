@@ -118,6 +118,12 @@ local config = {
           url = formatter_settings_path
         }
       },
+      -- TODO: Make this toggleable
+      -- inlayHints = {
+      --   parameterNames = {
+      --     enabled = 'all',
+      --   },
+      -- },
       configuration = {
         -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
         -- And search for `interface RuntimeOption`
@@ -128,11 +134,11 @@ local config = {
           --   path = 'C:\\Program Files\\AdoptOpenJDK\\jdk-11.0.10.9-hotspot',
           -- },
           {
-            name = "JavaSE-17",
+            name = 'JavaSE-17',
             path = '/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home',
           },
           {
-            name = "JavaSE-21",
+            name = 'JavaSE-21',
             path = '/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home',
           },
         }

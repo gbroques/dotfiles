@@ -43,6 +43,7 @@ return {
         dynamicRegistration = false,
         lineFoldingOnly = true
       }
+
       vim.lsp.config('*', {
         capabilities = capabilities
       })

@@ -74,6 +74,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
 
+    -- TODO: Make this toggleable
+    -- vim.lsp.inlay_hint.enable(true, {bufnr = event.buf})
+
     local set_lsp_keymap = function(mode, lhs, rhs, opts)
       local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
       vim.keymap.set(mode, lhs, rhs, keymap_opts)
