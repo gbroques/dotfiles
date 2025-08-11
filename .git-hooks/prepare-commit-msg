@@ -6,6 +6,7 @@
 # https://www.gnu.org/software/stow/manual/stow.html#Terminology
 
 COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
 
 # Explanation of below command:
 # 1. Get paths for all added files
@@ -16,7 +17,8 @@ COMMIT_MSG_FILE=$1
 packages=$(git diff --name-only --cached | sed -E 's/\/.+//' | uniq | sort | paste -sd ' ' -)
 
 # -z checks if the string length is zero.
-if [ -z "$packages" ]; then
+# $COMMIT_SOURCE is "commit" if a -c, -C or --amend option was given.
+if [ -z "$packages" -o "$COMMIT_SOURCE" = "commit" ]; then
   echo "$(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
 else
   echo "($packages): $(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
