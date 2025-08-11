@@ -21,7 +21,7 @@ return {
     end
   },
   {
-    -- TODO: Improve visual indicator upon pressing s / S.
+    -- TODO: Add visual indicator upon pressing s / S.
     -- Statusline could say LEAP for the mode and change colors to red or yellow.
     -- See https://github.com/rebelot/heirline.nvim/issues/220
     'ggandor/leap.nvim',
@@ -50,21 +50,12 @@ return {
         group = vim.api.nvim_create_augroup('leap_enter', { clear = true }),
         pattern = 'LeapEnter',
         callback = function()
-          print('LEAP')
           vim.api.nvim_create_autocmd('CursorMoved', {
             once = true,
             callback = function()
               vim.cmd('normal! zz')
             end,
           })
-        end,
-      })
-      vim.api.nvim_create_autocmd('User', {
-        group = vim.api.nvim_create_augroup('leap_leave', { clear = true }),
-        pattern = 'LeapLeave',
-        callback = function()
-          -- Clear LEAP message
-          print()
         end,
       })
     end
