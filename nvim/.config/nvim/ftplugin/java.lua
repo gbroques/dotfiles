@@ -90,9 +90,10 @@ local function get_config_dir()
 end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
-local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 -- https://github.com/microsoft/vscode-java-test/wiki/Run-with-Configuration#property-details
 local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods', shortenCommandLine = 'jarmanifest' }
+local root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' });
+local project_dir = vim.fs.basename(root_dir)
 local config = {
   capabilities = capabilities,
   cmd = {
@@ -108,8 +109,7 @@ local config = {
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
     "-jar", launcher_jar_path,
     "-configuration", join_path(jdtls_path, get_config_dir()),
-    -- TODO Should this be in stdpath('data')?
-    "-data", vim.fn.expand(join_path('~', '.cache', 'jdtls-workspace', workspace_dir))
+    "-data", join_path(vim.fn.stdpath('cache'), 'jdtls-workspace', project_dir)
   },
   settings = {
     java = {
@@ -170,7 +170,7 @@ local config = {
     }
   },
   -- find_root duplicated in keymaps.lua
-  root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' }),
+  root_dir = root_dir,
   init_options = {
     -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Language-Server-Settings-&-Capabilities#extended-client-capabilities
     extendedClientCapabilities = jdtls.extendedClientCapabilities,
