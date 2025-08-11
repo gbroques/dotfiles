@@ -23,6 +23,7 @@
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
   "leap.nvim": { "branch": "main", "commit": "ebaf38f7fd7193cc918c10eb955afed63301cd76" },
   "live-command.nvim": { "branch": "main", "commit": "05b9f886628f3e9e6122e734c1fac4f13dcb64b4" },
+  "live-rename.nvim": { "branch": "main", "commit": "78fcdb4072c6b1a8e909872f9a971b2f2b642d1e" },
   "lsp-progress.nvim": { "branch": "main", "commit": "f3df1df8f5ea33d082db047b5d2d2b83cc01cd8a" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "5477d67a5ca12b704f2a8a55a057fc79750f3dbb" },
   "mason.nvim": { "branch": "main", "commit": "7f265cd6ae56cecdd0aa50c8c73fc593b0604801" },

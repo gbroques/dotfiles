@@ -44,6 +44,10 @@ return {
     end,
   },
   {
+    'saecki/live-rename.nvim',
+    commit = '78fcdb4072c6b1a8e909872f9a971b2f2b642d1e'
+  },
+  {
     -- TODO: consider lspsaga instead of dressing.nvim for LSP rename input
     -- TODO: this was archived and snacks.nvim was a suggested replacement
     -- See https://github.com/stevearc/dressing.nvim/issues/190
