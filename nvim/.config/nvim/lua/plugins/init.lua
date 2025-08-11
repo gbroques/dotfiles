@@ -82,8 +82,8 @@ return {
     event = 'VeryLazy',
     commit = '65cd7eecc6ad92578a91acb2baebc1a27abf7e2b',
     config = function()
-      vim.keymap.set({ 'o', 'x' }, 'av', '<cmd>lua require("various-textobjs").subword("outer")<CR>')
-      vim.keymap.set({ 'o', 'x' }, 'iv', '<cmd>lua require("various-textobjs").subword("inner")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'au', '<cmd>lua require("various-textobjs").subword("outer")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'iu', '<cmd>lua require("various-textobjs").subword("inner")<CR>')
       vim.keymap.set({ 'o', 'x' }, 'aq', '<cmd>lua require("various-textobjs").anyQuote("outer")<CR>')
       vim.keymap.set({ 'o', 'x' }, 'iq', '<cmd>lua require("various-textobjs").anyQuote("inner")<CR>')
     end

@@ -152,6 +152,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `gn` next search pattern (*built-in*)
 * `gN` last search pattern (*built-in*)
 * `h`unk (only ih 'inner hunk' supported) (*gitsigns*)
+* `k`ey (*tree-sitter*)
 * `l`oop (*tree-sitter*)
 * `p`aragraph (*built-in*)
 * `w`ord (*built-in*)
@@ -159,7 +160,8 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `r`eturn statement (*tree-sitter*)
 * `s`entence (*built-in*)
 * `t`ag (*built-in*)
-* `v` subword (v is a small w) (*nvim-various-textobjs*)
+* `u` subword (two `u`s make a w) (*nvim-various-textobjs*)
+* `v`alue (*tree-sitter*)
 * `x` attribute (*tree-sitter*)
 * `[]`, `<>`, `()`, `{}`, `"`, `'`, `` ` `` (*built-in*)
 

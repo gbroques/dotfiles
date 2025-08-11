@@ -50,10 +50,14 @@ return {
               ['id'] = { query = '@conditional.inner', desc = 'inner decision or con(d)itional' },
               ['af'] = { query = '@function.outer', desc = 'a function' },
               ['if'] = { query = '@function.inner', desc = 'inner function' },
+              ['ak'] = { query = '@key.outer', desc = 'a key' },
+              ['ik'] = { query = '@key.inner', desc = 'inner key' },
               ['al'] = { query = '@loop.outer', desc = 'a loop' },
               ['il'] = { query = '@loop.inner', desc = 'inner loop' },
               ['ar'] = { query = '@return.outer', desc = 'a return statement' },
               ['ir'] = { query = '@return.inner', desc = 'inner return statement' },
+              ['av'] = { query = '@value.outer', desc = 'a value' },
+              ['iv'] = { query = '@value.inner', desc = 'inner value' },
               -- Mnemonic: "Attr" sounds like "adder" which is close to the "add" symbol "+"
               --           rotated 45 degrees gives you x.
               --           x is also used for HTML / XML attributes in chrisgrieser/nvim-various-textobjs.
