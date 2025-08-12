@@ -21,7 +21,7 @@ return {
     end
   },
   {
-    -- TODO: Add visual indicator upon pressing s / S.
+    -- TODO: Add visual indicator upon pressing s / S, and f / t.
     -- Statusline could say LEAP for the mode and change colors to red or yellow.
     -- See https://github.com/rebelot/heirline.nvim/issues/220
     -- Alternatively change cursor and cursor line color:
