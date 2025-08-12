@@ -48,8 +48,8 @@ return {
             lookahead = true,
             keymaps = {
               -- Text objects
-              ['=l'] = { query = '@assignment.lhs', desc = 'Left hand side of an assignment' },
-              ['=r'] = { query = '@assignment.rhs', desc = 'Right hand side of an assignment' },
+              ['=l'] = { query = '@assignment.lhs', desc = 'left hand side of an assignment' },
+              ['=r'] = { query = '@assignment.rhs', desc = 'right hand side of an assignment' },
               ['aa'] = { query = '@parameter.outer', desc = 'an argument' },
               ['ia'] = { query = '@parameter.inner', desc = 'inner argument' },
               ['ac'] = { query = '@class.outer', desc = 'a class' },
@@ -72,6 +72,8 @@ return {
               --           Supported in HTML and JavaScript.
               ['ax'] = { query = '@attribute.outer', desc = 'a attribute' },
               ['ix'] = { query = '@attribute.inner', desc = 'inner attribute' },
+              ['a/'] = { query = '@comment.outer', desc = 'a comment' },
+              ['i/'] = { query = '@comment.inner', desc = 'inner comment' },
             },
             include_surrounding_whitespace = function(table)
               -- Only include surrounding whitespace for outer text objects when deleting.
