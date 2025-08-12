@@ -1,3 +1,5 @@
+-- See :help 'statusline' for printf % style items.
+
 local colors_module = require('colors')
 
 return {
