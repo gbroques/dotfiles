@@ -7,4 +7,6 @@ return {
     cmd = 'Spectre',
     config = true
   }
+  -- TODO: Add nvim-rip-substitute to replace :substitute command?
+  -- { 'chrisgrieser/nvim-rip-substitute' },
 }

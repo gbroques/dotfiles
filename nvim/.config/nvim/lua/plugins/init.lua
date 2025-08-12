@@ -71,7 +71,6 @@ return {
   --
   -- { 'SmiteshP/nvim-navic' },
   -- { 'chentoast/marks.nvim' },
-  -- { 'chrisgrieser/nvim-rip-substitute' },
   -- { 'hedyhli/outline.nvim' },
   -- { 'kosayoda/nvim-lightbulb' },
   -- { 'andymass/vim-matchup' },
