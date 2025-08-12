@@ -32,6 +32,14 @@ return {
       'folke/tokyonight.nvim'
     },
     config = function()
+      -- TODO: experiment with preview_filter
+      -- require('leap').opts.preview_filter =
+      --     function(ch0, ch1, ch2)
+      --       return not (
+      --         ch1:match('%s') or
+      --         ch0:match('%a') and ch1:match('%a') and ch2:match('%a')
+      --       )
+      --     end
       -- Map z instead of s in operator pending mode as it conflicts with cs, ds, and ys for surround in normal mode.
       -- https://www.reddit.com/r/neovim/comments/13j3j45/comment/jkcuj2b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
       -- x is for visual mode, see :help map-modes
