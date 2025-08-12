@@ -48,6 +48,7 @@ return {
             lookahead = true,
             keymaps = {
               -- Text objects
+              -- Don't use l= and r= because r= would conflict with cr, dr, and yr for remote operations.
               ['=l'] = { query = '@assignment.lhs', desc = 'left hand side of an assignment' },
               ['=r'] = { query = '@assignment.rhs', desc = 'right hand side of an assignment' },
               ['aa'] = { query = '@parameter.outer', desc = 'an argument' },
