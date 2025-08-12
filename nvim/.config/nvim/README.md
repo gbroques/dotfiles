@@ -164,6 +164,7 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 * `v`alue (*tree-sitter*)
 * `x` attribute (*tree-sitter*)
 * `[]`, `<>`, `()`, `{}`, `"`, `'`, `` ` `` (*built-in*)
+* `=l` and `=r` for left-hand and right-hand side of an assignment statement (*tree-sitter*)
 
 See `:help text-objects` for details on built-in text-objects.
 

@@ -48,8 +48,8 @@ return {
             lookahead = true,
             keymaps = {
               -- Text objects
-              -- TODO: Add assignment and property text object?
-              --       See https://www.josean.com/posts/nvim-treesitter-and-textobjects
+              ['=l'] = { query = '@assignment.lhs', desc = 'Left hand side of an assignment' },
+              ['=r'] = { query = '@assignment.rhs', desc = 'Right hand side of an assignment' },
               ['aa'] = { query = '@parameter.outer', desc = 'an argument' },
               ['ia'] = { query = '@parameter.inner', desc = 'inner argument' },
               ['ac'] = { query = '@class.outer', desc = 'a class' },
