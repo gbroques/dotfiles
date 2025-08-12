@@ -45,7 +45,8 @@ return {
   },
   {
     'saecki/live-rename.nvim',
-    commit = '78fcdb4072c6b1a8e909872f9a971b2f2b642d1e'
+    commit = '78fcdb4072c6b1a8e909872f9a971b2f2b642d1e',
+    event = { 'BufReadPre', 'BufNewFile' }
   },
   {
     -- TODO: consider lspsaga instead of dressing.nvim for LSP rename input
