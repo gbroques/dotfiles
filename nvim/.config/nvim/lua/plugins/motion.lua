@@ -24,6 +24,8 @@ return {
     -- TODO: Add visual indicator upon pressing s / S.
     -- Statusline could say LEAP for the mode and change colors to red or yellow.
     -- See https://github.com/rebelot/heirline.nvim/issues/220
+    -- Alternatively change cursor and cursor line color:
+    -- https://github.com/rasulomaroff/reactive.nvim/issues/23
     'ggandor/leap.nvim',
     commit = 'ebaf38f7fd7193cc918c10eb955afed63301cd76',
     dependencies = {
