@@ -81,7 +81,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
       local keymap_opts = vim.tbl_extend('force', { buffer = event.buf }, opts)
       vim.keymap.set(mode, lhs, rhs, keymap_opts)
     end
-    set_lsp_keymap('n', 'gd', vim.lsp.buf.definition, { desc = 'Goto definition' })
+
+    local function jump_to_first_definition(options)
+      vim.fn.setqflist({}, ' ', options)
+      vim.cmd('silent cfirst')
+    end
+    set_lsp_keymap('n', 'gd', function()
+      vim.lsp.buf.definition({ on_list = jump_to_first_definition })
+    end, { desc = 'Goto definition' })
     set_lsp_keymap('n', 'gD', vim.lsp.buf.declaration, { desc = 'Goto declaration' })
     set_lsp_keymap('n', 'gI', vim.lsp.buf.implementation, { desc = 'Goto implementation' })
     set_lsp_keymap('n', 'gl', function()
