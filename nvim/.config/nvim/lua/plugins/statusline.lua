@@ -104,6 +104,10 @@ return {
         end
       }
 
+      local scheduled_redraw_status = vim.schedule_wrap(function()
+        vim.cmd('redrawstatus')
+      end)
+
       local Mode = {
         static = {
           -- Mode names copied from lualine:
@@ -161,9 +165,7 @@ return {
         update = {
           'ModeChanged',
           pattern = '*:*',
-          callback = vim.schedule_wrap(function()
-            vim.cmd('redrawstatus')
-          end),
+          callback = scheduled_redraw_status
         },
       }
 
@@ -218,6 +220,8 @@ return {
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
+        -- TODO: Add update to allow faster color change when mode changes,
+        -- also need to update when buffer changes.
       }
 
       local get_file_flag = function(icon)
@@ -260,6 +264,8 @@ return {
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
+        -- TODO: Add update to allow faster color change when mode changes,
+        -- also need to update when buffer changes.
       }
 
       -- Add children to FileNameBlock
@@ -338,11 +344,11 @@ return {
           return { fg = self:mode_color(), bg = colors.bg_statusline }
         end,
         update = {
+          -- TODO: Add ModeChanged event once heirline supports multiple events:
+          -- https://github.com/rebelot/heirline.nvim/pull/228
           'User',
           pattern = 'LspProgressStatusUpdated',
-          callback = vim.schedule_wrap(function()
-            vim.cmd('redrawstatus')
-          end),
+          callback = scheduled_redraw_status
         }
       }
 
@@ -351,6 +357,11 @@ return {
         hl = function(self)
           return { fg = self:mode_color(), bg = colors.fg_gutter }
         end,
+        update = {
+          'ModeChanged',
+          pattern = '*:*',
+          callback = scheduled_redraw_status
+        }
       }
 
       -- Add children to ModeAwareStatusLine
