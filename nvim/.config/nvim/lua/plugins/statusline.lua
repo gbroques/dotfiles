@@ -187,20 +187,13 @@ return {
       local function get_filename()
         return format_uri(vim.uri_from_bufnr(vim.api.nvim_get_current_buf()))
       end
-      local function contains(tab, val)
-        for _, value in ipairs(tab) do
-          if value == val then
-            return true
-          end
-        end
-      end
       local only_show_mode = function()
         local filetypes_to_only_show_mode = {
           'alpha',
           'lazy',
           'TelescopePrompt'
         }
-        return contains(filetypes_to_only_show_mode, vim.bo.filetype)
+        return vim.tbl_contains(filetypes_to_only_show_mode, vim.bo.filetype)
       end
       local FileName = {
         provider = function()
