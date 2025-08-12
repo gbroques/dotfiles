@@ -8,6 +8,7 @@
           (function_definition
             body: (_) @value.inner)
           (table_constructor) @value.inner
+          (function_call) @value.inner
           (number) @value.inner
           (true) @value.inner
           (false) @value.inner
