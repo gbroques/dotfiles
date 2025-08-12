@@ -2,6 +2,7 @@ return {
   {
     'Wansmer/treesj',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    keys = 'J',
     config = function()
       require('treesj').setup({ use_default_keymaps = false })
       vim.keymap.set('n', 'J', ':lua require("treesj").toggle()<CR>', { desc = 'Toggle split / join' })
