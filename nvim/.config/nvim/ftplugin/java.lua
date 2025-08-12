@@ -5,7 +5,7 @@ local jdtls = require('jdtls')
 local jdtls_tests = require('jdtls.tests')
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-function dir_exists(path)
+local function dir_exists(path)
   local ok, err, code = os.rename(path, path)
   if not ok then
     -- Check for permission denied, which still means the directory exists
