@@ -1,5 +1,13 @@
 return {
   {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({ use_default_keymaps = false })
+      vim.keymap.set('n', 'J', ':lua require("treesj").toggle()<CR>', { desc = 'Toggle split / join' })
+    end,
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate', -- Update installed parsers when upgrading plugin
     commit = '42fc28ba918343ebfd5565147a42a26580579482',
@@ -109,6 +117,5 @@ return {
         }
       })
     end
-  },
-
+  }
 }
