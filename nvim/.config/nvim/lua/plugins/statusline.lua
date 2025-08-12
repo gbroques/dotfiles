@@ -173,6 +173,7 @@ return {
 
       local file_modified_lighten_percentage = 0.30
 
+      -- Copied from https://zignar.net/2022/01/21/a-boring-statusline-for-neovim/#language-server-status-or-filename
       local function format_uri(uri)
         if vim.startswith(uri, 'jdt://') then
           local package = uri:match('contents/[%a%d._-]+/([%a%d._-]+)') or ''
