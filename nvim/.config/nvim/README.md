@@ -169,6 +169,12 @@ All of the built-in vim text-objects are maintained, with some additional ones m
 
 See `:help text-objects` for details on built-in text-objects.
 
+## Troubleshooting
+
+To quickly evaluate a Lua expression, run `:=expression` which is equal to `:lua print(vim.inspect(expression))` (see `:help :lua`).
+
+To see output print via Lua's `print` function, run the `:messages` command.
+
 ## References
 
 Neovim IDE Distributions:
