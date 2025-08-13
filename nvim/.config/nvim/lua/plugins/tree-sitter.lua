@@ -10,10 +10,14 @@ return {
       local langs = {
         javascript = lang_utils.merge_preset(javascript, {
           object = lang_utils.set_preset_for_dict({
+            -- Prevent ESLint error for comma-dangle rule.
+            split = { last_separator = false },
             -- Prevent ESLint error for @babel/object-curly-spacing rule.
             join = { space_in_brackets = false }
           }),
           array = lang_utils.set_preset_for_dict({
+            -- Prevent ESLint error for comma-dangle rule.
+            split = { last_separator = false },
             -- Prevent ESLint error for array-bracket-spacing rule.
             join = { space_in_brackets = false }
           })
