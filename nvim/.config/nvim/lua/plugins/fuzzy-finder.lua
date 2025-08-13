@@ -126,6 +126,13 @@ return {
             preview_title = false,
             prompt_title = 'Search',
             disable_coordinates = true,   -- hide row and column number from each entry
+            layout_strategy = 'vertical',
+            layout_config = {
+              prompt_position = 'bottom',
+              preview_cutoff = 1,
+              preview_height = 0.30,
+              mirror = false
+            },
             path_display = function(opts, path)
               local Path = require "plenary.path"
               local shortened_path = Path:new(path):shorten(1)
