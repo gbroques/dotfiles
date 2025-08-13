@@ -159,14 +159,15 @@ return {
             path_display = function(opts, path)
               local Path = require "plenary.path"
               local shortened_path = Path:new(path):shorten(1)
-
+              -- TODO: Provide a different hl_group for tests.
+              -- local hl_group = string.find(string.lower(path), 'test') and "TelescopeResultsComment" or "TelescopeResultsLineNr"
               local highlights = {
                 {
                   {
                     0,                 -- highlight start position
                     #shortened_path,   -- highlight end position
                   },
-                  "Comment",           -- highlight group name
+                  "TelescopeResultsLineNr",           -- highlight group name
                 },
               }
 
