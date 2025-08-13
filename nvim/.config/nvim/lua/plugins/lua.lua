@@ -5,7 +5,7 @@ return {
     -- https://github.com/folke/lazydev.nvim/issues/114
     'folke/lazydev.nvim',
     tag = 'v1.9.0',
-    ft = 'lua',     -- only load on lua files
+    ft = 'lua', -- only load on lua files
     opts = {
       library = {
         -- See the configuration section for more details
@@ -20,7 +20,7 @@ return {
       opts.sources = opts.sources or {}
       table.insert(opts.sources, {
         name = "lazydev",
-        group_index = 0,     -- set group index to 0 to skip loading LuaLS completions
+        group_index = 0, -- set group index to 0 to skip loading LuaLS completions
       })
     end,
   },
@@ -52,11 +52,23 @@ return {
   },
   -- Lua 5.1 Reference Manual converted to Vim help docs
   -- https://www.lua.org/manual/5.1/manual.html
-  -- Need to add modeline to set ft=help for automatically maximizing window,
-  -- and providing syntax highlighting.
-  -- See https://github.com/emiasims/nvim-luaref/issues/12
   {
     'milisims/nvim-luaref',
-    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
+    commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127',
+    config = function()
+      -- Need to add modeline to set ft=help for automatically maximizing window,
+      -- and providing syntax highlighting.
+      -- See https://github.com/emiasims/nvim-luaref/issues/12
+      vim.api.nvim_create_autocmd('BufWinEnter', {
+        desc = 'Set the filetype to help for Lua reference',
+        group = vim.api.nvim_create_augroup('nvim-luaref', { clear = true }),
+        pattern = 'lua_reference.txt',
+        callback = function()
+          vim.o.filetype = 'help'
+          -- maximize window, duplicated with maximize_help autocmd in autocmd.lua
+          vim.cmd.wincmd('o')
+        end
+      })
+    end
   },
 }
