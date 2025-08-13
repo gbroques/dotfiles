@@ -14,6 +14,8 @@ return {
     config = function()
       require('nvim-autopairs').setup {
         check_ts = true, -- treesitter integration
+        -- Override to enable for TelescopePrompt
+        disable_filetype = { "spectre_panel", "snacks_picker_input" },
       }
 
       -- Insert parentheses () after completing function or method.
