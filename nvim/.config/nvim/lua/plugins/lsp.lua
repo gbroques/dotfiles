@@ -59,14 +59,12 @@ return {
         'fennel_ls'
       }
       for _, server in ipairs(servers) do
-        local opts = {}
         local require_ok, settings = pcall(require, 'plugins.language-server-settings.' .. server)
-        if require_ok then
-          opts = vim.tbl_deep_extend('force', settings, opts)
-        end
 
-        vim.lsp.config(server, opts)
-        vim.lsp.enable(server)
+        if require_ok then
+          vim.lsp.config(server, settings)
+          vim.lsp.enable(server)
+        end
       end
       -- YAML
       -- TODO: Get OpenAPI workflow for Neovim working.
