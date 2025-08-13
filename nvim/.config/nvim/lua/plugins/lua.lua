@@ -52,6 +52,9 @@ return {
   },
   -- Lua 5.1 Reference Manual converted to Vim help docs
   -- https://www.lua.org/manual/5.1/manual.html
+  -- Need to add modeline to set ft=help for automatically maximizing window,
+  -- and providing syntax highlighting.
+  -- See https://github.com/emiasims/nvim-luaref/issues/12
   {
     'milisims/nvim-luaref',
     commit = '9cd3ed50d5752ffd56d88dd9e395ddd3dc2c7127'
