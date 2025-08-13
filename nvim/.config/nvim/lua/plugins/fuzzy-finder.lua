@@ -94,6 +94,18 @@ return {
               ['<C-Up>'] = require('telescope.actions').cycle_history_prev,
             },
           },
+          vimgrep_arguments = {
+            "rg",
+            -- Defaults
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            -- Added
+            "--trim" -- trim leading whitespace
+          },
         },
         pickers = {
           lsp_references = {
@@ -112,8 +124,25 @@ return {
           },
           live_grep = {
             preview_title = false,
-            prompt_title = 'Search'
-          }
+            prompt_title = 'Search',
+            disable_coordinates = true,   -- hide row and column number from each entry
+            path_display = function(opts, path)
+              local Path = require "plenary.path"
+              local shortened_path = Path:new(path):shorten(1)
+
+              local highlights = {
+                {
+                  {
+                    0,                 -- highlight start position
+                    #shortened_path,   -- highlight end position
+                  },
+                  "Comment",           -- highlight group name
+                },
+              }
+
+              return shortened_path, highlights
+            end
+          },
         },
         extensions = {
           frecency = {
