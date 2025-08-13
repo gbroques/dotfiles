@@ -75,9 +75,6 @@ return {
     },
     config = function()
       local telescope = require('telescope')
-
-      local colors = require('tokyonight.colors').setup()
-      vim.api.nvim_set_hl(0, 'TelescopeTestPath', { bg = colors.diff.add , fg = colors.border_highlight })
       telescope.setup({
         defaults = {
           wrap_results = true,
@@ -154,7 +151,7 @@ return {
           live_grep = {
             preview_title = false,
             prompt_title = 'Search',
-            disable_coordinates = true,   -- hide row and column number from each entry
+            disable_coordinates = true, -- hide row and column number from each entry
             layout_strategy = 'vertical',
             layout_config = {
               prompt_position = 'bottom',
@@ -169,14 +166,13 @@ return {
             path_display = function(opts, path)
               local Path = require "plenary.path"
               local shortened_path = Path:new(path):shorten(1)
-              local hl_group = string.find(string.lower(path), 'test') and "TelescopeTestPath" or "TelescopeResultsLineNr"
               local highlights = {
                 {
                   {
-                    0,                 -- highlight start position
-                    #shortened_path,   -- highlight end position
+                    0,                       -- highlight start position
+                    #shortened_path,         -- highlight end position
                   },
-                  hl_group,           -- highlight group name
+                  "TelescopeResultsLineNr",  -- highlight group name
                 },
               }
 
