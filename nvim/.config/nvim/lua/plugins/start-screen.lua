@@ -50,6 +50,7 @@ return {
         -- Colemak homerow
         -- Start with the left-hand index finger, then right-hand index finger,
         -- then left-hand middle finger, then right-hand middle finger, and so on.
+        -- TODO: t conflicts with till operator on start screen
         local keys = { 't', 'n', 's', 'e', 'r', 'i', 'a', 'o' }
         local items_number = #keys
         local oldfiles = {}
