@@ -6,6 +6,7 @@ return {
       overrideConfigFile = os.getenv('ESLINT_CONFIG_FILE')
     }
   },
+  -- TODO: this doesn't seem to work
   on_attach = function(client, bufnr)
     if not base_on_attach then return end
     base_on_attach(client, bufnr)
