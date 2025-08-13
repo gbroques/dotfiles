@@ -148,6 +148,7 @@ return {
           frecency = {
             default_workspace = 'CWD',
             prompt_title = 'Find Files',
+            preview_title = false,
             sorter = require('telescope.config').values.file_sorter()
           }
         }
