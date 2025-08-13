@@ -76,6 +76,8 @@ return {
     config = function()
       local telescope = require('telescope')
 
+      local colors = require('tokyonight.colors').setup()
+      vim.api.nvim_set_hl(0, 'TelescopeTestPath', { bg = colors.diff.add , fg = colors.border_highlight })
       telescope.setup({
         defaults = {
           wrap_results = true,
@@ -156,18 +158,21 @@ return {
               preview_height = 0.30,
               mirror = false
             },
+            -- file_ignore_patterns = {
+            --   '%.jmx',
+            --   '%.drawio'
+            -- },
             path_display = function(opts, path)
               local Path = require "plenary.path"
               local shortened_path = Path:new(path):shorten(1)
-              -- TODO: Provide a different hl_group for tests.
-              -- local hl_group = string.find(string.lower(path), 'test') and "TelescopeResultsComment" or "TelescopeResultsLineNr"
+              local hl_group = string.find(string.lower(path), 'test') and "TelescopeTestPath" or "TelescopeResultsLineNr"
               local highlights = {
                 {
                   {
                     0,                 -- highlight start position
                     #shortened_path,   -- highlight end position
                   },
-                  "TelescopeResultsLineNr",           -- highlight group name
+                  hl_group,           -- highlight group name
                 },
               }
 
