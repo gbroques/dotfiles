@@ -144,6 +144,7 @@ return {
           --    with the cursor in between upon opening the prompt.
           --    There's actions.insert_symbol_i({prompt_bufnr}) and we can set an autocmd on BufWinEnter
           --    and check if the filetype is TelescopePrompt.
+          --    telescope-live-grep-args doesn't seem to respect any of the standard telescope options.
           -- 6. Can't highlight matches in the preview window (only line-level Highlighting is possible).
           --    This doesn't seem possible via fzf.lua or command-line either (e.g. with rg, bat, and delta).
           --
