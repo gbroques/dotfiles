@@ -122,6 +122,29 @@ return {
           find_files = {
             preview_title = false
           },
+          -- TODO: Consider switching to fzf.lua.
+          --       https://github.com/ibhagwan/fzf-lua
+          --
+          -- Numerous limitations exist:
+          -- 1. Not being able to easily colorize entries (see https://github.com/nvim-telescope/telescope.nvim/issues/3496)
+          --    For making the background green for tests.
+          -- 2. Highlighting matches for entries breaks when using a regular expression.
+          -- 3. Can't customize the colon ':' delimiting the filename and the text from ripgrep output.
+          -- 4. Can't limit line length by showing matches with context on either side by passing:
+          --
+          --        --only-matching .{0,N}query.{0,N}
+          --
+          --    See:
+          --    * https://github.com/BurntSushi/ripgrep/issues/2449#issuecomment-1464979702
+          --    * https://github.com/BurntSushi/ripgrep/issues/1352#issuecomment-1959071755
+          -- 5. Not being able to pass flags such as -t / -T for filetype filtering, or
+          --    a path to limit search.
+          --    This has lead to the following extension being created:
+          --    https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file
+          -- 6. Can't highlight matches in the preview window (only line-level Highlighting is possible).
+          --    This doesn't seem possible via fzf.lua or command-line either (e.g. with rg, bat, and delta).
+          --
+          -- A lot of these issues stem from being more abstracted away from ripgrep.
           live_grep = {
             preview_title = false,
             prompt_title = 'Search',
