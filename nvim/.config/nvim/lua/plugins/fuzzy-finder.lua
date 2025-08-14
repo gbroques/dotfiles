@@ -33,7 +33,11 @@ return {
       -- https://github.com/nvim-telescope/telescope.nvim/issues/2195
       -- https://www.reddit.com/r/neovim/comments/1ed65xm/telescope_prompt_prefilled_with_a_when_using/?rdt=40029
       -- https://github.com/nvim-telescope/telescope.nvim/blob/b4da76be54691e854d3e0e02c36b0245f945c2c7/lua/telescope/pickers.lua#L601-L602
-      { '<leader>f',  ':Telescope frecency<CR>',     desc = 'Find files' },
+      {
+        '<leader>f',
+        ':Telescope frecency path_display={"shorten"}<CR>',
+        desc = 'Find files',
+      },
       {
         '<leader>s',
         ':lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>',
@@ -149,7 +153,10 @@ return {
             default_workspace = 'CWD',
             prompt_title = 'Find Files',
             preview_title = false,
-            sorter = require('telescope.config').values.file_sorter()
+            sorter = require('telescope.config').values.file_sorter(),
+            layout_config = {
+              preview_width = 0.40,
+            },
           },
           -- TODO: Consider switching to fzf.lua.
           --       https://github.com/ibhagwan/fzf-lua
