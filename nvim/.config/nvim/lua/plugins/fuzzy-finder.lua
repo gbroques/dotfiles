@@ -1,3 +1,17 @@
+vim.api.nvim_create_autocmd('FileType', {
+  -- Relies on autopairs being enabled for TelescopePrompt filetype.
+  desc = 'Automatically insert quotes for search',
+  group = vim.api.nvim_create_augroup('insert_quotes_for_search', { clear = true }),
+  pattern = 'TelescopePrompt',
+  callback = function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local current_picker = require('telescope.actions.state').get_current_picker(bufnr)
+    if current_picker.prompt_title == 'Search' then
+      vim.fn.feedkeys("'")
+    end
+  end
+})
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -20,7 +34,11 @@ return {
       -- https://www.reddit.com/r/neovim/comments/1ed65xm/telescope_prompt_prefilled_with_a_when_using/?rdt=40029
       -- https://github.com/nvim-telescope/telescope.nvim/blob/b4da76be54691e854d3e0e02c36b0245f945c2c7/lua/telescope/pickers.lua#L601-L602
       { '<leader>f',  ':Telescope frecency<CR>',     desc = 'Find files' },
-      { '<leader>s',  ':Telescope live_grep<CR>',    desc = 'Search',            remap = true },
+      {
+        '<leader>s',
+        ':lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>',
+        desc = 'Search'
+      },
       { '<leader>pb', ':Telescope buffers<CR>',      desc = 'Buffers' },
       { '<leader>pc', ':Telescope commands<CR>',     desc = 'Commands' },
       { '<leader>pd', ':Telescope diagnostics<CR>',  desc = 'Diagnostics' },
@@ -71,6 +89,10 @@ return {
         -- * smartpde/telescope-recent-files
         'nvim-telescope/telescope-frecency.nvim',
         commit = '03a0efd1a8668b902bddef4b82cb7d46cd5ab22c'
+      },
+      {
+        'nvim-telescope/telescope-live-grep-args.nvim',
+        commit = 'b80ec2c70ec4f32571478b501218c8979fab5201'
       }
     },
     config = function()
@@ -121,6 +143,14 @@ return {
           find_files = {
             preview_title = false
           },
+        },
+        extensions = {
+          frecency = {
+            default_workspace = 'CWD',
+            prompt_title = 'Find Files',
+            preview_title = false,
+            sorter = require('telescope.config').values.file_sorter()
+          },
           -- TODO: Consider switching to fzf.lua.
           --       https://github.com/ibhagwan/fzf-lua
           --
@@ -136,20 +166,12 @@ return {
           --    See:
           --    * https://github.com/BurntSushi/ripgrep/issues/2449#issuecomment-1464979702
           --    * https://github.com/BurntSushi/ripgrep/issues/1352#issuecomment-1959071755
-          -- 5. Not being able to pass flags such as -t / -T for filetype filtering, or
-          --    a path to limit search.
-          --    This has lead to the following extension being created:
-          --    https://github.com/nvim-telescope/telescope-live-grep-args.nvim?tab=readme-ov-file
-          --    Using this would be more flexible, but we would want to automatically insert quotes
-          --    with the cursor in between upon opening the prompt.
-          --    There's actions.insert_symbol_i({prompt_bufnr}) and we can set an autocmd on BufWinEnter
-          --    and check if the filetype is TelescopePrompt.
-          --    telescope-live-grep-args doesn't seem to respect any of the standard telescope options.
+          -- 5. Consider adding insert mode mappings for generating ripgrep arguments.
           -- 6. Can't highlight matches in the preview window (only line-level Highlighting is possible).
           --    This doesn't seem possible via fzf.lua or command-line either (e.g. with rg, bat, and delta).
           --
           -- A lot of these issues stem from being more abstracted away from ripgrep.
-          live_grep = {
+          live_grep_args = {
             preview_title = false,
             prompt_title = 'Search',
             disable_coordinates = true, -- hide row and column number from each entry
@@ -170,24 +192,16 @@ return {
               local highlights = {
                 {
                   {
-                    0,                       -- highlight start position
-                    #shortened_path,         -- highlight end position
+                    0,                      -- highlight start position
+                    #shortened_path,        -- highlight end position
                   },
-                  "TelescopeResultsLineNr",  -- highlight group name
+                  "TelescopeResultsLineNr", -- highlight group name
                 },
               }
 
               return shortened_path, highlights
             end
           },
-        },
-        extensions = {
-          frecency = {
-            default_workspace = 'CWD',
-            prompt_title = 'Find Files',
-            preview_title = false,
-            sorter = require('telescope.config').values.file_sorter()
-          }
         }
       })
       telescope.load_extension('ui-select')
