@@ -155,6 +155,7 @@ return {
         extensions = {
           frecency = {
             default_workspace = 'CWD',
+            show_filter_column = false, -- hide root directory from filepaths
             prompt_title = 'Find Files',
             preview_title = false,
             sorter = require('telescope.config').values.file_sorter(),
