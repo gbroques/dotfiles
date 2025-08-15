@@ -1,11 +1,12 @@
--- Inspired from TJ DeVries' config:
--- https://github.com/tjdevries/config_manager/blob/b1bd25a063326d4a1d35439c2c3af42c465347ab/xdg_config/nvim/lua/tj/globals.lua#L10-L13
--- See 'Neovim Lua Plugin From Scratch':
--- https://youtu.be/n4Lp4cV8YR0?t=2067
--- See also:
--- https://www.reddit.com/r/neovim/comments/yzfpx3/til_you_can_type_lua_code_instead_of_lua/
--- https://www.reddit.com/r/neovim/comments/zhweuc/whats_a_fast_way_to_load_the_output_of_a_command/
---
+---Usage: `:lua P(package.loaded)`
+---
+---Print a large table to a new buffer in a vertical split.
+---
+---See the following thread for context:
+---[What's a fast way to load the output of a command into a temporary buffer?](https://www.reddit.com/r/neovim/comments/zhweuc/whats_a_fast_way_to_load_the_output_of_a_command/)
+---
+---@param value any A large table to print.
+---@return any value The same value returned as a refernce.
 P = function(value)
   local lines = vim.split(vim.inspect(value), '\n', { plain = true })
   vim.cmd('vnew')
