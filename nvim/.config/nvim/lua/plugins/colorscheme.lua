@@ -1,4 +1,4 @@
-local colors_module = require('colors')
+local colors_util = require('colors_util')
 
 return {
   'folke/tokyonight.nvim',
@@ -13,12 +13,12 @@ return {
       },
       -- Lighten light colors and darken dark colors for added contrast.
       on_colors = function(colors)
-        colors.comment = colors_module.lighten(colors.comment, 0.20)
+        colors.comment = colors_util.lighten(colors.comment, 0.20)
         -- Lighten unused symbols (DiagnosticUnnecessary)
-        colors.terminal_black = colors_module.lighten(colors.terminal_black, 0.30)
-        colors.fg = colors_module.lighten(colors.fg, 0.20)          -- #c8d3f5 lightened to #d3dcf7
-        colors.bg = colors_module.darken(colors.bg, 0.20)           -- #222436 darkened to #1b1d2b
-        colors.bg_dark = colors_module.darken(colors.bg_dark, 0.20) -- #1e2030 darkened to #181a26
+        colors.terminal_black = colors_util.lighten(colors.terminal_black, 0.30)
+        colors.fg = colors_util.lighten(colors.fg, 0.20)          -- #c8d3f5 lightened to #d3dcf7
+        colors.bg = colors_util.darken(colors.bg, 0.20)           -- #222436 darkened to #1b1d2b
+        colors.bg_dark = colors_util.darken(colors.bg_dark, 0.20) -- #1e2030 darkened to #181a26
       end,
       on_highlights = function(hl, c)
         -- Default is fg_gutter

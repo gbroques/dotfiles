@@ -1,6 +1,6 @@
 -- See :help 'statusline' for printf % style items.
 
-local colors_module = require('colors')
+local colors_util = require('colors_util')
 
 return {
   {
@@ -212,7 +212,7 @@ return {
         hl = function(self)
           local fg = self:mode_color()
           if vim.bo.modified then
-            fg = colors_module.lighten(fg, file_modified_lighten_percentage)
+            fg = colors_util.lighten(fg, file_modified_lighten_percentage)
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
@@ -238,7 +238,7 @@ return {
             return get_file_flag('●')
           end,
           hl = function(self)
-            return { fg = colors_module.lighten(self:mode_color(), file_modified_lighten_percentage) }
+            return { fg = colors_util.lighten(self:mode_color(), file_modified_lighten_percentage) }
           end
         },
         {
@@ -256,7 +256,7 @@ return {
         hl = function(self)
           local fg = self:mode_color()
           if vim.bo.modified then
-            fg = colors_module.lighten(fg, file_modified_lighten_percentage)
+            fg = colors_util.lighten(fg, file_modified_lighten_percentage)
           end
           return { fg = fg, bg = colors.fg_gutter }
         end,
