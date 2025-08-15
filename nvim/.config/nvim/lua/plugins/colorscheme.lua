@@ -4,11 +4,6 @@ return {
   'folke/tokyonight.nvim',
   tag = 'v4.11.0',
   config = function()
-    -- Troubleshooting
-    -- ===============
-    -- To see highlight groups, run :Inspect when cursor is over a symbol.
-    -- Source:
-    -- https://vi.stackexchange.com/questions/39781/how-to-get-the-highlight-group-of-the-word-under-the-cursor-in-neovim-with-trees
     require('tokyonight').setup({
       styles = {
         comments = { italic = false },

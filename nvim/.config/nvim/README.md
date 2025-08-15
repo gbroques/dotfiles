@@ -175,6 +175,25 @@ To quickly evaluate a Lua expression, run `:=expression` which is equal to `:lua
 
 To see output print via Lua's `print` function, run the `:messages` command.
 
+---
+
+For styling, run the `:Inspect` command to see the highlight group of the word under the cursor.
+
+For seeing available highlight groups, run `:Telescope highlights`.
+
+Most highlight groups are defined in [tokyonight/groups/base.lua](https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/base.lua),
+and for other plugin specific highlight groups, see [tokyonight/groups/](https://github.com/folke/tokyonight.nvim/tree/v4.11.0/lua/tokyonight/groups).
+
+To view colors, see [tokyonight/colors/moon.lua](https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/colors/moon.lua).
+
+These can be required by running:
+
+```lua
+local colors = require('tokyonight.colors').setup()
+```
+
+For the main API to define highlight groups, see `:help nvim_set_hl()` under the `vim.api` namespace.
+
 ## References
 
 Neovim IDE Distributions:
