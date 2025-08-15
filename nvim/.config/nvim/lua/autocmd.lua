@@ -31,6 +31,15 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Add - to iskeyword to consider kebab-case words for Ctrl+[ help tag navigation.',
+  group = vim.api.nvim_create_augroup('help_set_iskeyword', { clear = true }),
+  pattern = 'help',
+  callback = function()
+    vim.o.iskeyword = vim.o.iskeyword .. ',-'
+  end
+})
+
 vim.api.nvim_create_autocmd('TermOpen', {
   desc = 'Automatically enter INSERT mode upon opening a terminal.',
   -- https://vi.stackexchange.com/questions/3670/how-to-enter-insert-mode-when-entering-neovim-terminal-pane
