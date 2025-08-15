@@ -39,7 +39,7 @@ return {
       -- https://github.com/nvim-telescope/telescope.nvim/blob/b4da76be54691e854d3e0e02c36b0245f945c2c7/lua/telescope/pickers.lua#L601-L602
       {
         '<leader>f',
-        ':Telescope frecency path_display={"shorten"}<CR>',
+        ':Telescope frecency<CR>',
         desc = 'Find files',
       },
       {
@@ -105,6 +105,8 @@ return {
     },
     config = function()
       local telescope = require('telescope')
+      -- TelescopeResultsLineNr is brighter than TelescopeResultsComment
+      vim.api.nvim_set_hl(0, 'TelescopeResultsComment', { link = 'TelescopeResultsLineNr' })
       telescope.setup({
         defaults = {
           wrap_results = true,
@@ -158,6 +160,12 @@ return {
             show_filter_column = false, -- hide root directory from filepaths
             prompt_title = 'Find Files',
             preview_title = false,
+            path_display = {
+              'truncate',
+              filename_first = {
+                reverse_directories = true
+              }
+            },
             sorter = require('telescope.config').values.file_sorter(),
             layout_config = {
               preview_width = 0.40,
