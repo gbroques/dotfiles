@@ -1,12 +1,16 @@
+local function is_current_prompt_search()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local current_picker = require('telescope.actions.state').get_current_picker(bufnr)
+  return current_picker ~= nil and current_picker.prompt_title == 'Search'
+end
+
 vim.api.nvim_create_autocmd('FileType', {
   -- Relies on autopairs being enabled for TelescopePrompt filetype.
   desc = 'Automatically insert quotes for search',
   group = vim.api.nvim_create_augroup('insert_quotes_for_search', { clear = true }),
   pattern = 'TelescopePrompt',
   callback = function()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local current_picker = require('telescope.actions.state').get_current_picker(bufnr)
-    if current_picker.prompt_title == 'Search' then
+    if is_current_prompt_search() then
       vim.fn.feedkeys("'")
     end
   end

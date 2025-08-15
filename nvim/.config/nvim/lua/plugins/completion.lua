@@ -1,4 +1,14 @@
+local function is_current_picker_search()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local current_picker = require('telescope.actions.state').get_current_picker(bufnr)
+  return current_picker ~= nil and current_picker.prompt_title == 'Search'
+end
+
 return {
+  {
+    dir = "~/Projects/cmp-ripgrep-flags",
+    dependencies = 'hrsh7th/nvim-cmp'
+  },
   {
     'hrsh7th/nvim-cmp',
     commit = 'b5311ab3ed9c846b585c0c15b7559be131ec4be9',
@@ -45,7 +55,7 @@ return {
         dependencies = { 'rafamadriz/friendly-snippets' },
         config = function()
           require('luasnip').config.setup {}
-          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip.loaders.from_vscode").lazy_load({ exclude = 'global' })
         end
       },
       {
@@ -106,6 +116,15 @@ return {
       }
 
       cmp.setup({
+        -- Enable for prompt buffer type.
+        -- https://github.com/hrsh7th/nvim-cmp/issues/60
+        -- http://github.com/hrsh7th/nvim-cmp/issues/938
+        -- https://github.com/hrsh7th/nvim-cmp/issues/1171
+        enabled = function()
+          local is_prompt = vim.api.nvim_get_option_value('buftype', { buf = 0 }) == 'prompt'
+          return (is_prompt and is_current_picker_search()) or not is_prompt
+        end,
+
         view = {
           entries = { name = 'custom', selection_order = 'near_cursor' }
         },
@@ -115,6 +134,10 @@ return {
           end,
         },
         sources = cmp.config.sources({
+          {
+            name = 'ripgrep_flags',
+            option = { enabled = is_current_picker_search }
+          },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'nvim_lsp_signature_help' },
@@ -125,6 +148,9 @@ return {
           },
           { name = 'path' }
         }),
+        window = {
+          documentation = cmp.config.window.bordered(),
+        },
         -- TODO: Should this be in keymaps?
         mapping = {
           ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -176,6 +202,7 @@ return {
             vim_item.kind = kind_icons[kind]
             vim_item.menu = ({
               nvim_lsp = kind,
+              ripgrep_flags = 'Ripgrep',
               luasnip = 'Snippet',
               buffer = 'Buffer',
               path = 'Path',
