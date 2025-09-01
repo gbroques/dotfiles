@@ -68,6 +68,9 @@ if command --query zoxide
 else
     echo "Install zoxide: https://github.com/ajeetdsouza/zoxide"
 end
+# This is the default bin when installing zoxide via the install script:
+# https://github.com/ajeetdsouza/zoxide/blob/v0.9.8/install.sh#L77
+fish_add_path ~/.local/bin
 
 # fzf
 # ---
