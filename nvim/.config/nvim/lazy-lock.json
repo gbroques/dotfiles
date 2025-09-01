@@ -11,6 +11,7 @@
   "cmp-nvim-lsp-document-symbol": { "branch": "main", "commit": "f94f7ba948e32cd302caba1c2ca3f7c697fb4fcf" },
   "cmp-nvim-lsp-signature-help": { "branch": "main", "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7" },
   "cmp-path": { "branch": "main", "commit": "e52e640b7befd8113b3350f46e8cfcfe98fcf730" },
+  "cmp-ripgrep-flags": { "branch": "main", "commit": "89b2b4b71ab1abe9fc541b5bdfb4a812c2fdc8ad" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conjure": { "branch": "main", "commit": "0649a6866017e61457d8f5093827fd48db8a08f1" },
   "dressing.nvim": { "branch": "master", "commit": "8b7ae53d7f04f33be3439a441db8071c96092d19" },

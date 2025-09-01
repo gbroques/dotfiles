@@ -6,7 +6,8 @@ end
 
 return {
   {
-    dir = "~/Projects/cmp-ripgrep-flags",
+    'gbroques/cmp-ripgrep-flags',
+    version = '^1.0.0',
     dependencies = 'hrsh7th/nvim-cmp'
   },
   {
