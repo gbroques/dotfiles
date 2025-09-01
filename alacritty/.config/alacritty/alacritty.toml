@@ -68,8 +68,8 @@ family = "JetBrainsMono NF"
 style = "Regular"
 
 [terminal]
-shell.program = "/opt/homebrew/bin/fish"
-shell.args = ["-C", "cd ~/Work"]
+shell.program = "/usr/bin/fish"
+# shell.args = ["-C", "cd ~/Work"]
 
 [window]
 startup_mode = "Maximized"
