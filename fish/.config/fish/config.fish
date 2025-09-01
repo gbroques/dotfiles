@@ -3,10 +3,7 @@
 # TODO: Consider installing https://github.com/Gazorby/fish-abbreviation-tips
 
 # Neovim
-abbr -a -- n neovide
-abbr -a -- v nvim
-abbr -a -- vi nvim
-abbr -a -- vim nvim
+abbr -a -- n nvim
 
 # Git
 abbr -a -- g git
