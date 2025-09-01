@@ -23,6 +23,7 @@ abbr -a --set-cursor='%' -- gia 'git merge-base --is-ancestor % HEAD && echo yes
 abbr -a -- gm 'git merge'
 abbr -a -- gpl 'git pull'
 abbr -a -- gps 'git push'
+abbr -a -- gpsf 'git push --force-with-lease'
 abbr -a -- grb 'git rebase'
 abbr -a -- grbi 'git rebase --interactive'
 abbr -a -- gre 'git reset'
