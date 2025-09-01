@@ -25,6 +25,12 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :TSInstall fish
 
+### Markdown
+
+1. Install the [Marksman](https://github.com/artempyanykh/marksman) language server:
+
+       :MasonInstall marksman
+
 ### Java
 
 1. Install Java 21 in the following directory:
