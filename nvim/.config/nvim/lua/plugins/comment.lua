@@ -25,5 +25,14 @@ return {
         end
       }
     }
+  },
+  {
+    -- TODO: Trigger on /**
+    -- See https://github.com/danymat/neogen/issues/227
+    'danymat/neogen',
+    tag = '2.20.0',
+    config = function()
+      require('neogen').setup({ snippet_engine = 'luasnip' })
+    end,
   }
 }
