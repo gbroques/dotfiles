@@ -8,6 +8,7 @@ return {
       {
         'williamboman/mason.nvim',
         tag = 'v2.0.0',
+        cmd = { 'Mason', 'MasonLog', 'MasonInstall', 'MasonUninstall', 'MasonUninstallAll' },
         config = function()
           require('mason').setup({
             log_level = vim.log.levels.DEBUG,
