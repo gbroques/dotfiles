@@ -10,8 +10,7 @@ return {
         tag = 'v2.0.0',
         config = function()
           require('mason').setup({
-            -- Uncomment for troubleshooting:
-            -- log_level = vim.log.levels.DEBUG,
+            log_level = vim.log.levels.DEBUG,
             ui = {
               -- Fullscreen
               height = vim.o.lines - 1,
