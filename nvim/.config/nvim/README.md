@@ -90,7 +90,7 @@ Install the Tree-sitter query parser for syntax-highlighting via `:InspectTree`,
 
 Install the following dependencies:
 
-    :MasonInstall jedi-language-server flake8 autopep8 isort mypy
+    :MasonInstall ruff pyright
 
 Install the tree-sitter Python parser from inside Neovim:
 

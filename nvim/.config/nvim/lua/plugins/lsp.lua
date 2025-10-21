@@ -81,32 +81,4 @@ return {
       -- }
     end
   },
-  {
-    -- Adapts linters & formatters to Neovim's LSP client.
-    -- Alternatives:
-    -- 'stevearc/conform.nvim' - Lightweight yet powerful formatter plugin for Neovim
-    -- 'mattn/efm-langserver' - General purpose Language Server that can use specified error message format generated from specified command.
-    -- 'iamcco/diagnostic-languageserver' - General purpose Language Server that integrate with linter to support diagnostic features
-    -- See lsp.lua
-    'nvimtools/none-ls.nvim',
-    commit = '5fcb73913a9290f78097e34420fe0e6130c5c33c',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      local null_ls = require('null-ls')
-
-      null_ls.setup({
-        debug = true,
-        sources = {
-          -- Python
-          -- use ruff / available in none-ls-extras.nvim
-          -- https://github.com/astral-sh/ruff-lsp
-          -- null_ls.builtins.diagnostics.flake8,  -- linter
-          null_ls.builtins.diagnostics.mypy, -- static type checker
-          -- TODO: use ruff
-          -- null_ls.builtins.formatting.autopep8, -- formatter
-          null_ls.builtins.formatting.isort, -- import sorter
-        },
-      })
-    end
-  },
 }
