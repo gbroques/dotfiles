@@ -28,10 +28,8 @@ return {
     config = true
   },
   {
-    -- Upgrade to fix vim.validate deprecation warning:
-    -- https://github.com/smjonas/live-command.nvim/issues/45
     'smjonas/live-command.nvim',
-    commit = '05b9f886628f3e9e6122e734c1fac4f13dcb64b4',
+    commit = 'd23d94a526a6798584d45a77235b001d4a588f8b',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       require('live-command').setup {
