@@ -5,7 +5,8 @@ return {
     config = function()
       require('amazonq').setup({
         ssoStartUrl = 'https://charter-cloud-connect.awsapps.com/start',
-        debug = true
+        -- Uncomment the below line to debug plugin:
+        -- debug = true
       })
     end
   }
