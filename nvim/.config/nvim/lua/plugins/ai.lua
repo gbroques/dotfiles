@@ -4,7 +4,8 @@ return {
     tag = 'v0.1.0',
     config = function()
       require('amazonq').setup({
-        ssoStartUrl = 'https://charter-cloud-connect.awsapps.com/start'
+        ssoStartUrl = 'https://charter-cloud-connect.awsapps.com/start',
+        debug = true
       })
     end
   }
