@@ -201,6 +201,10 @@ return {
             end
             local kind = vim_item.kind
             vim_item.kind = kind_icons[kind]
+            if vim_item.menu == 'Amazon Q' then
+              kind = 'Amazon Q'
+              vim_item.kind = '󰚩'
+            end
             vim_item.menu = ({
               nvim_lsp = kind,
               ripgrep_flags = 'Ripgrep',
