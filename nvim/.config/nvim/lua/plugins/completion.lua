@@ -26,10 +26,8 @@ return {
         commit = 'b74fab3656eea9de20a9b8116afa3cfc4ec09657'
       },
       {
-        -- TODO: checkhealth reports vim.validate is deprecated.
-        -- See https://github.com/hrsh7th/cmp-path/issues/81
         'hrsh7th/cmp-path',
-        commit = 'e52e640b7befd8113b3350f46e8cfcfe98fcf730'
+        commit = 'c642487086dbd9a93160e1679a1327be111cbc25'
       },
       {
         'hrsh7th/cmp-cmdline',
