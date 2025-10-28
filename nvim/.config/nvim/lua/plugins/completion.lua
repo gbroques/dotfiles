@@ -152,6 +152,35 @@ return {
         window = {
           documentation = cmp.config.window.bordered(),
         },
+        -- Based on default config:
+        -- https://github.com/hrsh7th/nvim-cmp/blob/a7bcf1d88069fc67c9ace8a62ba480b8fe879025/lua/cmp/config/default.lua#L67-L81
+        sorting = {
+          comparators = {
+            -- Prioritize Amazon Q completions
+            function(entry1, entry2)
+              local client1 = entry1.source.source.client
+              local client2 = entry2.source.source.client
+              if client1 and client2 then
+                local is_q1 = client1.name:match('amazonq')
+                local is_q2 = client2.name:match('amazonq')
+                if is_q1 and not is_q2 then
+                  return true
+                elseif not is_q1 and is_q2 then
+                  return false
+                end
+              end
+            end,
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.locality,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+          },
+        },
         -- TODO: Should this be in keymaps?
         mapping = {
           ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
