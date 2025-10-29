@@ -108,11 +108,11 @@ set -gx FZF_CTRL_T_COMMAND "command fd -L --type f  --hidden --follow --exclude 
 # ---
 set -gx BAT_THEME tokyonight_moon
 
-if test -x /home/g/.local/bin/micromamba
+if test -x ~/.local/bin/micromamba
     # >>> mamba initialize >>>
     # !! Contents within this block are managed by 'micromamba shell init' !!
-    set -gx MAMBA_EXE "/home/g/.local/bin/micromamba"
-    set -gx MAMBA_ROOT_PREFIX "/home/g/micromamba"
+    set -gx MAMBA_EXE ~/.local/bin/micromamba
+    set -gx MAMBA_ROOT_PREFIX "~/micromamba"
     $MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
     # <<< mamba initialize <<<
 end
