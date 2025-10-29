@@ -67,3 +67,12 @@ vim.api.nvim_create_autocmd('TermClose', {
     end
   end
 })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  desc = 'Set global H mark for quick navigation to last .http file',
+  group = vim.api.nvim_create_augroup('http_file_mark', { clear = true }),
+  pattern = '*.http',
+  callback = function()
+    vim.cmd('mark H')
+  end
+})
