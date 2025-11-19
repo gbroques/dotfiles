@@ -5,6 +5,9 @@
 # Neovim
 abbr -a -- n nvim
 
+# Kiro CLI
+abbr -a -- q kiro-cli
+
 # Git
 abbr -a -- g git
 abbr -a -- ga 'git add'
