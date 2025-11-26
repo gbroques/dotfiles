@@ -62,6 +62,18 @@ To setup:
 6. Ensure [`zoxide`](#zoxide) is installed for more intelligent directory changing.
 7. A `secrets.fish` may be created in [./fish/.config/fish/](./fish/.config/fish/) for any sensitive or proprietary configuration in a private work environment.
 
+## ghostty
+
+[Ghostty](https://ghostty.org/) is a feature-rich terminal emulator for macOS and Linux that supports [true color](https://en.wikipedia.org/wiki/Color_depth#True_color_(24-bit)), [undercurl](https://ryantravitz.com/blog/2023-02-18-pull-of-the-undercurl/), and the [Kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/).
+
+To setup:
+
+1. Install Ghostty by [following the instructions on the website](https://ghostty.org/docs/install/binary).
+2. Install the [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads).
+
+[JetBrainsMono](https://www.jetbrains.com/lp/mono/) is as a [monospaced font](https://en.wikipedia.org/wiki/Monospaced_font) with [ligatures](https://github.com/JetBrains/JetBrainsMono?tab=readme-ov-file#ligatures-for-code). [Nerd Fonts](https://www.nerdfonts.com/) is a project that patches fonts to support icons.
+
+
 ## alacritty
 
 [Alacritty](https://alacritty.org/) is a cross-platform terminal emulator that supports [true color](https://en.wikipedia.org/wiki/Color_depth#True_color_(24-bit)) and [undercurl](https://ryantravitz.com/blog/2023-02-18-pull-of-the-undercurl/).
