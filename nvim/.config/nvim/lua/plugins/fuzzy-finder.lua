@@ -255,6 +255,25 @@ return {
       bigfile = { enabled = false },
       dashboard = { enabled = false },
       explorer = { enabled = false },
+      -- This keeps the image on the top right corner, basically leaving your
+      -- text area free, suggestion found in reddit by user `Redox_ahmii`
+      -- https://www.reddit.com/r/neovim/comments/1irk9mg/comment/mdfvk8b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+      styles = {
+        snacks_image = {
+          relative = "editor",
+          col = -1,
+        },
+      },
+      image = {
+        enabled = true,
+        doc = { enabled = false },
+        convert = {
+          magick = {
+            -- Make background white instead of transparent to see black text for transparent images
+            default = { "{src}[0]", "-background", "white", "-alpha", "remove", "-scale", "1920x1080>" }
+          }
+        }
+      },
       indent = { enabled = false },
       input = { enabled = false },
       picker = { enabled = true },
@@ -272,6 +291,14 @@ return {
           Snacks.picker.lsp_symbols()
         end,
         desc = 'Lists LSP document symbols in the current buffer'
+      },
+      {
+        'K',
+        function()
+          Snacks.image.hover()
+        end,
+        desc = 'Show image',
+        ft = 'markdown'
       },
     }
   }

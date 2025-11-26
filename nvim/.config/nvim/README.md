@@ -124,6 +124,12 @@ Install the [YAML language server](https://github.com/redhat-developer/yaml-lang
 
     npm install -g yaml-language-server
 
+## Image Support
+
+The [snacks.nvim image plugin](https://github.com/folke/snacks.nvim/blob/main/docs/image.md) requires [ImageMagick](https://imagemagick.org/) to be installed to convert images of different formats to PNG for caching purposes.
+
+It also requires a terminal emulator that supports the [kitty graphics protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/) such as [ghostty](https://ghostty.org/).
+
 ## Operators
 
 * `c`hange (*built-in*)
