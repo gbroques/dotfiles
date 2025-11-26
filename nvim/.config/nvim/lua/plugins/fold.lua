@@ -19,8 +19,19 @@ return {
       vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
+      vim.o.foldtext = ''
       local ufo = require('ufo')
-      ufo.setup()
+      ufo.setup({
+        provider_selector = function(bufnr, filetype, buftype)
+          -- Use treesitter for Markdown folds like LazyVim:
+          -- https://github.com/LazyVim/LazyVim/blob/v15.13.0/lua/lazyvim/util/treesitter.lua#L46-L48
+          -- https://youtu.be/EYczZLNEnIY?list=PLZWMav2s1MZQnIfyXOQRaqwp7QAFtDPVk&t=67
+          if filetype == 'markdown' then
+            return { 'treesitter', 'indent' }
+          end
+          return { 'lsp', 'indent' }
+        end
+      })
 
       -- Keymaps
       vim.keymap.set('n', 'zR', ufo.openAllFolds)
