@@ -63,6 +63,15 @@ return {
         require('telescope.builtin').lsp_references({ include_declaration = false })
       end, { desc = 'Goto references' } },
       { 'gW', ':Telescope lsp_dynamic_workspace_symbols<CR>', desc = 'Workplace symbols' },
+      -- {
+      --   '<leader>ls',
+      --   function()
+      --     require('telescope.builtin').lsp_document_symbols({
+      --       symbol_width = 50, -- Increase from default of 25
+      --     })
+      --   end,
+      --   desc = 'Lists LSP document symbols in the current buffer'
+      -- },
     },
     dependencies = {
       {
@@ -233,4 +242,37 @@ return {
       telescope.load_extension('frecency')
     end
   },
+  {
+    'folke/snacks.nvim',
+    commit = 'fe7cfe9800a182274d0f868a74b7263b8c0c020b',
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      bigfile = { enabled = false },
+      dashboard = { enabled = false },
+      explorer = { enabled = false },
+      indent = { enabled = false },
+      input = { enabled = false },
+      picker = { enabled = true },
+      notifier = { enabled = false },
+      quickfile = { enabled = false },
+      scope = { enabled = false },
+      scroll = { enabled = false },
+      statuscolumn = { enabled = false },
+      words = { enabled = false },
+    },
+    keys = {
+      {
+        '<leader>ls',
+        function()
+          Snacks.picker.lsp_symbols()
+        end,
+        desc = 'Lists LSP document symbols in the current buffer'
+      },
+    }
+  }
 }
