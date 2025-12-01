@@ -156,6 +156,15 @@ To setup:
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers extend Kiro's capabilities with additional tools and resources.
 
+#### context7
+
+[context7](https://github.com/upstash/context7) provides up-to-date code documentation for libraries and frameworks.
+
+To setup:
+
+1. Ensure [Node.js](https://nodejs.org/en/download) is installed (provides `npx`).
+2. The server is automatically configured in `mcp.work.json` and `mcp.personal.json` and enabled by the setup script.
+
 #### mcp-atlassian (Work Only)
 
 [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) provides integration with Confluence and Jira.

@@ -12,6 +12,10 @@
         "-e", "JIRA_PERSONAL_TOKEN",
         "ghcr.io/sooperset/mcp-atlassian:latest"
       ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
     }
   }
 }
