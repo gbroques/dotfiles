@@ -10,7 +10,6 @@ font-size = 22
 
 # Shell
 shell-integration = fish
-shell-integration-features = no-cursor,sudo
 command = /usr/local/bin/fish
 
 # Window
