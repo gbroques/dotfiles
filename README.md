@@ -135,3 +135,40 @@ To setup:
 
 To install, see [Installing](https://github.com/tmux/tmux/wiki/Installing).
 
+## kiro
+
+[Kiro CLI](https://kiro.dev) is an AI-powered command-line assistant.
+
+To setup:
+
+1. [Install Kiro CLI](https://kiro.dev/docs/cli/installation/).
+2. Install the stow package from the root of this repository:
+
+       stow kiro
+
+3. Run the setup script to configure for work or personal environment:
+
+       ./kiro/setup.sh
+
+   The script detects the environment based on the presence of a `~/Work` directory.
+
+### MCP Servers
+
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers extend Kiro's capabilities with additional tools and resources.
+
+#### mcp-atlassian (Work Only)
+
+[mcp-atlassian](https://github.com/sooperset/mcp-atlassian) provides integration with Confluence and Jira.
+
+To setup:
+
+1. Ensure Docker is installed and running.
+2. Set environment variables in `secrets.fish`:
+
+       set -x CONFLUENCE_URL "https://your-domain.atlassian.net/wiki"
+       set -x CONFLUENCE_PERSONAL_TOKEN "your-token"
+       set -x JIRA_URL "https://your-domain.atlassian.net"
+       set -x JIRA_PERSONAL_TOKEN "your-token"
+
+3. The server is automatically configured in `mcp.work.json` and enabled by the setup script.
+

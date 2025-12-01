@@ -1,0 +1,6 @@
+{
+  "mcp.loadedBefore": true,
+  "chat.enableContextUsageIndicator": true,
+  "chat.enableTodoList": true,
+  "chat.enableDelegate": true
+}

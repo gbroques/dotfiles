@@ -2,6 +2,8 @@
 fish/.config/fish/fish_variables*
 fish/.config/fish/fisher/
 fish/.config/fish/secrets.fish
-# Amazon Q CLI
+# Kiro CLI
 fish/.config/fish/conf.d/00_fig_pre.fish
 fish/.config/fish/conf.d/99_fig_post.fish
+kiro/.kiro/.cli_bash_history
+kiro/.kiro/settings/mcp.json
