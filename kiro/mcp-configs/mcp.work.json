@@ -16,6 +16,13 @@
     "context7": {
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "postman": {
+      "type": "sse",
+      "url": "https://mcp.postman.com/minimal",
+      "headers": {
+        "Authorization": "Bearer ${POSTMAN_API_KEY}"
+      }
     }
   }
 }

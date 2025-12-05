@@ -181,3 +181,21 @@ To setup:
 
 3. The server is automatically configured in `mcp.work.json` and enabled by the setup script.
 
+#### postman (Work Only)
+
+[Postman MCP](https://mcp.postman.com/) provides integration with Postman workspaces, collections, and environments.
+
+To setup:
+
+1. Get a Postman API key from [Postman account settings](https://go.postman.co/settings/me/api-keys).
+2. Create a local config file with your API key:
+
+       cp ~/dotfiles/kiro/mcp-configs/mcp.work.json ~/dotfiles/kiro/mcp-configs/mcp.work.local.json
+
+3. Edit `mcp.work.local.json` and replace `${POSTMAN_API_KEY}` with your actual API key.
+4. Run the setup script - it will automatically use the local config:
+
+       ./kiro/setup.sh
+
+**Note:** `*.local.json` files are gitignored to keep credentials out of version control. The tracked `mcp.work.json` serves as a template.
+
