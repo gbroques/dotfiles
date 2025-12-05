@@ -45,7 +45,7 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
 4. Install the following dependencies via Mason (to find the latest versions goto https://mason-registry.dev/registry/list):
 
-       :MasonInstall jdtls@1.46.1 java-debug-adapter@0.58.2 java-test@0.43.1 lemminx@0.29.0
+       :MasonInstall jdtls@1.54.0 java-debug-adapter@0.58.2 java-test@0.43.2 lemminx@0.29.0
 
    jdtls requires `wget` to be available on the `PATH`.
 
