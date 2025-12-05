@@ -56,7 +56,7 @@ vscode_java_test_paths = vim.split(vscode_java_test_paths, '\n')
 -- Filter out non-versioned JARs such as:
 -- * com.microsoft.java.test.runner-jar-with-dependencies.jar
 -- * jacocoagent.jar
-local version_pattern = "%d+\\.%d+\\.%d+"
+local version_pattern = "%d+%.%d+%.%d+"
 vscode_java_test_paths = vim.tbl_filter(function(path)
   return string.match(path, version_pattern)
 end, vscode_java_test_paths)
