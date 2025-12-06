@@ -6,6 +6,4 @@ fish/.config/fish/secrets.fish
 fish/.config/fish/conf.d/00_fig_pre.fish
 fish/.config/fish/conf.d/99_fig_post.fish
 kiro/.kiro/.cli_bash_history
-kiro/.kiro/settings/mcp.json
-kiro/mcp-configs/*.local.json
 kiro/.kiro/agents/agent_config.json.example

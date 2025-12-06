@@ -146,12 +146,6 @@ To setup:
 
        stow kiro
 
-3. Run the setup script to configure for work or personal environment:
-
-       ./kiro/setup.sh
-
-   The script detects the environment based on the presence of a `~/Work` directory.
-
 ### MCP Servers
 
 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers extend Kiro's capabilities with additional tools and resources.
@@ -160,42 +154,5 @@ To setup:
 
 [context7](https://github.com/upstash/context7) provides up-to-date code documentation for libraries and frameworks.
 
-To setup:
-
-1. Ensure [Node.js](https://nodejs.org/en/download) is installed (provides `npx`).
-2. The server is automatically configured in `mcp.work.json` and `mcp.personal.json` and enabled by the setup script.
-
-#### mcp-atlassian (Work Only)
-
-[mcp-atlassian](https://github.com/sooperset/mcp-atlassian) provides integration with Confluence and Jira.
-
-To setup:
-
-1. Ensure Docker is installed and running.
-2. Set environment variables in `secrets.fish`:
-
-       set -x CONFLUENCE_URL "https://your-domain.atlassian.net/wiki"
-       set -x CONFLUENCE_PERSONAL_TOKEN "your-token"
-       set -x JIRA_URL "https://your-domain.atlassian.net"
-       set -x JIRA_PERSONAL_TOKEN "your-token"
-
-3. The server is automatically configured in `mcp.work.json` and enabled by the setup script.
-
-#### postman (Work Only)
-
-[Postman MCP](https://mcp.postman.com/) provides integration with Postman workspaces, collections, and environments.
-
-To setup:
-
-1. Get a Postman API key from [Postman account settings](https://go.postman.co/settings/me/api-keys).
-2. Create a local config file with your API key:
-
-       cp ~/dotfiles/kiro/mcp-configs/mcp.work.json ~/dotfiles/kiro/mcp-configs/mcp.work.local.json
-
-3. Edit `mcp.work.local.json` and replace `${POSTMAN_API_KEY}` with your actual API key.
-4. Run the setup script - it will automatically use the local config:
-
-       ./kiro/setup.sh
-
-**Note:** `*.local.json` files are gitignored to keep credentials out of version control. The tracked `mcp.work.json` serves as a template.
+Ensure [Node.js](https://nodejs.org/en/download) is installed (provides `npx`).
 
