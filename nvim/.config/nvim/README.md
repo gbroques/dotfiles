@@ -31,6 +31,18 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :MasonInstall marksman
 
+TODO: Under consideration are a preview plugin:
+* [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+* [Vivify](https://github.com/jannis-baum/Vivify)
+* [peek.nvim](https://github.com/toppair/peek.nvim)
+
+Linting support:
+* [markdownlint](https://github.com/DavidAnson/markdownlint)
+* [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+* [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+See: https://linkarzu.com/posts/neovim/markdown-setup-2025/
+
 ### Java
 
 1. Install Java 21 in the following directory:
