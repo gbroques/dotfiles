@@ -276,7 +276,19 @@ return {
       },
       indent = { enabled = false },
       input = { enabled = false },
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        layout = {
+          preset = "default",
+          layout = {
+            backdrop = false,
+            row = 0,
+            col = 0,
+            width = vim.o.columns,
+            height = vim.o.lines - 2, -- subtract 2 for statusbar and last line
+          },
+        },
+      },
       notifier = { enabled = false },
       quickfile = { enabled = false },
       scope = { enabled = false },
