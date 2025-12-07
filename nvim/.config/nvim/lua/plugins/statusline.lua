@@ -107,7 +107,7 @@ return {
       }
 
       local scheduled_redraw_status = vim.schedule_wrap(function()
-        vim.cmd('redrawstatus')
+        pcall(vim.api.nvim_command, 'redrawstatus')
       end)
 
       local Mode = {
