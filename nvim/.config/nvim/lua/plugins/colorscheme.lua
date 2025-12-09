@@ -30,6 +30,9 @@ return {
         -- Default is bold orange
         -- https://github.com/folke/tokyonight.nvim/blob/v4.11.0/lua/tokyonight/groups/base.lua#L34
         hl.CursorLineNr = { fg = c.fg }
+
+        -- Darken inline code background in markdown
+        hl['@markup.raw.markdown_inline'] = vim.tbl_extend('force', hl['@markup.raw.markdown_inline'] or {}, { bg = colors_util.darken(c.terminal_black, 0.5) })
       end
     })
 
