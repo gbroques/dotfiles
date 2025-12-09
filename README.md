@@ -144,7 +144,9 @@ To setup:
 1. [Install Kiro CLI](https://kiro.dev/docs/cli/installation/).
 2. Install the stow package from the root of this repository:
 
-       stow kiro
+       stow --no-folding kiro
+
+   **Note:** Use `--no-folding` to allow merging with work-specific kiro configuration.
 
 ### MCP Servers
 
