@@ -32,6 +32,7 @@ return {
         hl.CursorLineNr = { fg = c.fg }
 
         -- Darken inline code background in markdown
+        -- https://github.com/folke/tokyonight.nvim/blob/v4.14.1/lua/tokyonight/groups/treesitter.lua#L66
         hl['@markup.raw.markdown_inline'] = vim.tbl_extend('force', hl['@markup.raw.markdown_inline'] or {}, { bg = colors_util.darken(c.terminal_black, 0.5) })
       end
     })
