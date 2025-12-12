@@ -1,0 +1,6 @@
+{
+  "name": "default",
+  "description": "Default agent with all tools trusted",
+  "tools": ["*"],
+  "allowedTools": ["*"]
+}
