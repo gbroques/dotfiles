@@ -63,6 +63,7 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
+  -- { 'monaqa/dial.nvim' },
   --
   -- smooth scrolling
   -- { 'karb94/neoscroll.nvim' },
