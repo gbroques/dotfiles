@@ -3,5 +3,10 @@
   "description": "Default agent with all tools trusted",
   "tools": ["*"],
   "allowedTools": ["*"],
-  "includeMcpJson": true
+  "includeMcpJson": true,
+  "resources": [
+    "file://README.md",
+    "file://.kiro/steering/**/*.md",
+    "file://~/.kiro/steering/**/*.md"
+  ]
 }
