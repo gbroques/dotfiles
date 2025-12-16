@@ -63,7 +63,59 @@ return {
     end
   },
   -- TODO: Plugins under consideration:
-  -- { 'monaqa/dial.nvim' },
+  {
+    'monaqa/dial.nvim',
+    commit = 'f97c0c7fa7d5111bc04a91d0f693900fb2d95861',
+    config = function()
+      local augend = require("dial.augend")
+      require("dial.config").augends:register_group {
+        -- default augends used when no group name is specified
+        default = {
+          augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
+          augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
+          augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
+          augend.date.alias["%Y-%m-%d"], -- date (2022-02-19, etc.)
+          augend.date.alias["%H:%M"], -- time (14:30, etc.)
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          augend.constant.alias.Bool, -- boolean value (True <-> False)
+          augend.constant.alias.alpha, -- lowercase letters (a <-> b <-> c ...)
+          augend.constant.alias.Alpha, -- uppercase letters (A <-> B <-> C ...)
+          augend.semver.alias.semver, -- semantic version (1.2.3 -> 1.2.4)
+        },
+
+        -- augends used when group with name `mygroup` is specified
+        mygroup = {
+          augend.integer.alias.decimal,
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          augend.date.alias["%m/%d/%Y"], -- date (02/19/2022, etc.)
+        }
+      }
+      vim.keymap.set("n", "<C-a>", function()
+        require("dial.map").manipulate("increment", "normal")
+      end)
+      vim.keymap.set("n", "<C-x>", function()
+        require("dial.map").manipulate("decrement", "normal")
+      end)
+      vim.keymap.set("n", "g<C-a>", function()
+        require("dial.map").manipulate("increment", "gnormal")
+      end)
+      vim.keymap.set("n", "g<C-x>", function()
+        require("dial.map").manipulate("decrement", "gnormal")
+      end)
+      vim.keymap.set("x", "<C-a>", function()
+        require("dial.map").manipulate("increment", "visual")
+      end)
+      vim.keymap.set("x", "<C-x>", function()
+        require("dial.map").manipulate("decrement", "visual")
+      end)
+      vim.keymap.set("x", "g<C-a>", function()
+        require("dial.map").manipulate("increment", "gvisual")
+      end)
+      vim.keymap.set("x", "g<C-x>", function()
+        require("dial.map").manipulate("decrement", "gvisual")
+      end)
+    end
+  },
   --
   -- smooth scrolling
   -- { 'karb94/neoscroll.nvim' },
