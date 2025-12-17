@@ -31,6 +31,10 @@ gbroques' personal Neovim configuration with the following goals and philosophy:
 
        :MasonInstall marksman
 
+2. Install the tree-sitter Markdown parsers from inside Neovim:
+
+       :TSInstall markdown markdown_inline
+
 TODO: Under consideration are a preview plugin:
 * [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 * [Vivify](https://github.com/jannis-baum/Vivify)
