@@ -7,3 +7,5 @@ fish/.config/fish/conf.d/00_fig_pre.fish
 fish/.config/fish/conf.d/99_fig_post.fish
 kiro/.kiro/.cli_bash_history
 kiro/.kiro/agents/agent_config.json.example
+# macOS
+.DS_Store
