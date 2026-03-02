@@ -163,6 +163,7 @@ local config = {
         importOrder = {
           "java",
           "javax",
+          "jakarta",
           "org",
           "com"
         }
