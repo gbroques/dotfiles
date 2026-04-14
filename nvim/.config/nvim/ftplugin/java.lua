@@ -91,7 +91,7 @@ end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 -- https://github.com/microsoft/vscode-java-test/wiki/Run-with-Configuration#property-details
-local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods', shortenCommandLine = 'jarmanifest' }
+local java_test_config = { vmArgs = '-XX:+AllowRedefinitionToAddDeleteMethods --add-opens=java.base/java.nio=ALL-UNNAMED', shortenCommandLine = 'jarmanifest' }
 local root_dir = require('jdtls.setup').find_root({ 'pom.xml', '.git' });
 local project_dir = vim.fs.basename(root_dir)
 local config = {
